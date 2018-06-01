@@ -1,13 +1,23 @@
-// delay.h 
+#include <hidef.h>                      /* common defines and macros */
+#include "derivative.h"                 /* derivative-specific definitions */
 
-#include <hidef.h>            /* common defines and macros */
-#include "derivative.h"       /* derivative-specific definitions */
+/***********************************
+*   msDelay(unsigned long msTime)
+*
+* This function uses the 8MHz bus 
+* clock on the HCS12. 
+***********************************/
+void msDelay( unsigned long msTime )
+{
+  int i;			                          /* counter for number of ms delayed */
 
-void msDelay(unsigned delay_time){             // Delay value = delay time * clock frequency = 200 usec * 12 = 2400
- TSCR1 = 0x90;                // Enables TCNT and clears fast timer 
- TSCR2 = 0x01;                // Disables the TCNT interrupt and sets the prescaler to 2 (clock freq = 24MHz/2 = 12 MHz)
- TIOS |= 0x01;                // Enable OC0 function
- TC0 = TCNT + delay_time*12;  // Start an OC0 operation
- while (!(TFLG1 & 0x01));     // Wait for PT0 to go high
-  
+ 	TC0 	= TCNT + 125;		                /* preset TC0 for first OC event */
+	TIOS_IOS0 = 1;	                      /* ready to go - enable TC0 as OC */
+
+	for (i = 0; i < msTime; i++) {        /* for number of ms to delay */
+		while(!(TFLG1 & TFLG1_C0F_MASK));	              /* wait for OC event TEST */
+    TC0 += 125;		                      /* rearm the OC register, this clears TFLG1 */
+  } 
+
+  TIOS_IOS0 = 0;                        /* all done. Turn-off OC on TC0 */
 }
