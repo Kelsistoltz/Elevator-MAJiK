@@ -15,6 +15,7 @@ FILE SECTION
 mc9s12c32.c.o                           Model: SMALL,         Lang: ANSI-C
 main.c.o                                Model: SMALL,         Lang: ANSI-C
 Start12.c.o                             Model: SMALL,         Lang: ANSI-C
+rtshc12.c.o (ansisi.lib)                Model: SMALL,         Lang: ANSI-C
 CAN.c.o                                 Model: SMALL,         Lang: ANSI-C
 
 *********************************************************************************************
@@ -24,7 +25,7 @@ Entry point: 0xC029 (_Startup)
 _startupData is allocated at 0xC031 and uses 6 Bytes
 extern struct _tagStartup {
   unsigned nofZeroOut     0
-  _Copy    *toCopyDownBeg 0xC173
+  _Copy    *toCopyDownBeg 0xC18D
 } _startupData;
 
 *********************************************************************************************
@@ -33,8 +34,8 @@ Section Name                    Size  Type     From       To       Segment
 ---------------------------------------------------------------------------------------------
 .init                             49     R     0xC000     0xC030   ROM_C000
 .startData                        10     R     0xC031     0xC03A   ROM_C000
-.text                            312     R     0xC03B     0xC172   ROM_C000
-.copy                              2     R     0xC173     0xC174   ROM_C000
+.text                            310     R     0xC03B     0xC170   ROM_C000
+.copy                              2     R     0xC18D     0xC18E   ROM_C000
 .stack                           256   R/W      0x800      0x8FF   RAM
 .abs_section_8                     1   N/I        0x8        0x8   .absSeg0
 .abs_section_9                     1   N/I        0x9        0x9   .absSeg1
@@ -258,10 +259,11 @@ Section Name                    Size  Type     From       To       Segment
 .abs_section_16e                   2   N/I      0x16E      0x16F   .absSeg219
 .abs_section_17e                   2   N/I      0x17E      0x17F   .absSeg220
 .abs_section_ffb2                  2     R     0xFFB2     0xFFB3   .absSeg221
+RUNTIME                           28     R     0xC171     0xC18C   ROM_C000
 .vectSeg222_vect                   2     R     0xFFFE     0xFFFF   .vectSeg222
 
 Summary of section sizes per section type:
-READ_ONLY (R):         179 (dec:      377)
+READ_ONLY (R):         193 (dec:      403)
 READ_WRITE (R/W):      100 (dec:      256)
 NO_INIT (N/I):         104 (dec:      260)
 
@@ -313,7 +315,7 @@ MODULE:                 -- mc9s12c32.c.o --
      _RTICTL                                     3B       1       1       0   .abs_section_3b
      _COPCTL                                     3C       1       1       0   .abs_section_3c
      _ARMCOP                                     3F       1       1       0   .abs_section_3f
-     _TIOS                                       40       1       1       1   .abs_section_40
+     _TIOS                                       40       1       1       2   .abs_section_40
      _CFORC                                      41       1       1       0   .abs_section_41
      _OC7M                                       42       1       1       0   .abs_section_42
      _OC7D                                       43       1       1       0   .abs_section_43
@@ -460,15 +462,15 @@ MODULE:                 -- mc9s12c32.c.o --
      _RDRAD                                     273       1       1       0   .abs_section_273
      _PERAD                                     274       1       1       0   .abs_section_274
      _PPSAD                                     275       1       1       0   .abs_section_275
-     _PORTAB                                      0       2       2       0   .abs_section_0
-     _DDRAB                                       2       2       2       0   .abs_section_2
+     _PORTAB                                      0       2       2       1   .abs_section_0
+     _DDRAB                                       2       2       2       1   .abs_section_2
      _PARTID                                     1A       2       2       0   .abs_section_1a
      _DBGTB                                      22       2       2       0   .abs_section_22
      _DBGCC                                      26       2       2       0   .abs_section_26
      _DBGCA                                      2B       2       2       0   .abs_section_2b
      _DBGCB                                      2E       2       2       0   .abs_section_2e
      _TCNT                                       44       2       2       1   .abs_section_44
-     _TC0                                        50       2       2       1   .abs_section_50
+     _TC0                                        50       2       2       3   .abs_section_50
      _TC1                                        52       2       2       0   .abs_section_52
      _TC2                                        54       2       2       0   .abs_section_54
      _TC3                                        56       2       2       0   .abs_section_56
@@ -501,8 +503,8 @@ MODULE:                 -- mc9s12c32.c.o --
      _CANTXTSR                                  17E       2       2       0   .abs_section_17e
 MODULE:                 -- main.c.o --
 - PROCEDURES:
-     msDelay                                   C03B      1B      27       3   .text       
-     main                                      C056      65     101       1   .text       
+     msDelay                                   C03B      35      53       1   .text       
+     main                                      C070      42      66       1   .text       
 - VARIABLES:
 MODULE:                 -- Start12.c.o --
 - PROCEDURES:
@@ -512,11 +514,16 @@ MODULE:                 -- Start12.c.o --
      _startupData                              C031       6       6       3   .startData  
 - LABELS:
      __SEG_END_SSTACK                           900       0       0       1               
+MODULE:                 -- rtshc12.c.o (ansisi.lib) --
+- PROCEDURES:
+     _LCMP_P                                   C171      15      21       1   RUNTIME     
+     _ILSEXT                                   C186       7       7       1   RUNTIME     
+- VARIABLES:
 MODULE:                 -- CAN.c.o --
 - PROCEDURES:
-     CANInit                                   C0BB      33      51       1   .text       
-     CANTx                                     C0EE      59      89       1   .text       
-     CANRxISR                                  C147      2C      44       1   .text       
+     CANInit                                   C0B2      33      51       1   .text       
+     CANTx                                     C0E5      59      89       1   .text       
+     CANRxISR                                  C13E      33      51       1   .text       
 - VARIABLES:
      _Vector_38                                FFB2       2       2       0   .abs_section_ffb2
 
@@ -525,9 +532,10 @@ MODULE STATISTIC
   Name                                      Data   Code  Const
 ---------------------------------------------------------------------------------------------
   mc9s12c32.c.o                              260      0      0
-  main.c.o                                     0    128      0
+  main.c.o                                     0    119      0
   Start12.c.o                                  0     49      0
-  CAN.c.o                                      0    184      2
+  rtshc12.c.o (ansisi.lib)                     0     28      0
+  CAN.c.o                                      0    191      2
   other                                      256     12      2
 
 *********************************************************************************************
@@ -979,6 +987,8 @@ SECTION: ".abs_section_16e"
   _CANRXTSR 
 SECTION: ".abs_section_17e"
   _CANTXTSR 
+SECTION: "RUNTIME"
+  _LCMP_P _ILSEXT 
 SECTION: ".abs_section_ffb2"
   _Vector_38 
 
@@ -986,8 +996,8 @@ SECTION: ".abs_section_ffb2"
 OBJECT LIST SORTED BY ADDRESS
      Name                                      Addr   hSize   dSize     Ref    Section   RLIB
 ---------------------------------------------------------------------------------------------
-     _PORTAB                                      0       2       2       0   .abs_section_0
-     _DDRAB                                       2       2       2       0   .abs_section_2
+     _PORTAB                                      0       2       2       1   .abs_section_0
+     _DDRAB                                       2       2       2       1   .abs_section_2
      _PORTE                                       8       1       1       0   .abs_section_8
      _DDRE                                        9       1       1       0   .abs_section_9
      _PEAR                                        A       1       1       0   .abs_section_a
@@ -1028,7 +1038,7 @@ OBJECT LIST SORTED BY ADDRESS
      _RTICTL                                     3B       1       1       0   .abs_section_3b
      _COPCTL                                     3C       1       1       0   .abs_section_3c
      _ARMCOP                                     3F       1       1       0   .abs_section_3f
-     _TIOS                                       40       1       1       1   .abs_section_40
+     _TIOS                                       40       1       1       2   .abs_section_40
      _CFORC                                      41       1       1       0   .abs_section_41
      _OC7M                                       42       1       1       0   .abs_section_42
      _OC7D                                       43       1       1       0   .abs_section_43
@@ -1043,7 +1053,7 @@ OBJECT LIST SORTED BY ADDRESS
      _TSCR2                                      4D       1       1       1   .abs_section_4d
      _TFLG1                                      4E       1       1       1   .abs_section_4e
      _TFLG2                                      4F       1       1       0   .abs_section_4f
-     _TC0                                        50       2       2       1   .abs_section_50
+     _TC0                                        50       2       2       3   .abs_section_50
      _TC1                                        52       2       2       0   .abs_section_52
      _TC2                                        54       2       2       0   .abs_section_54
      _TC3                                        56       2       2       0   .abs_section_56
@@ -1209,21 +1219,34 @@ OBJECT LIST SORTED BY ADDRESS
      _PPSAD                                     275       1       1       0   .abs_section_275
      Init                                      C000      29      41       1   .init       
      _Startup                                  C029       8       8       0   .init       
-     msDelay                                   C03B      1B      27       3   .text       
-     main                                      C056      65     101       1   .text       
-     CANInit                                   C0BB      33      51       1   .text       
-     CANTx                                     C0EE      59      89       1   .text       
-     CANRxISR                                  C147      2C      44       1   .text       
+     msDelay                                   C03B      35      53       1   .text       
+     main                                      C070      42      66       1   .text       
+     CANInit                                   C0B2      33      51       1   .text       
+     CANTx                                     C0E5      59      89       1   .text       
+     CANRxISR                                  C13E      33      51       1   .text       
+     _LCMP_P                                   C171      15      21       1   RUNTIME     
+     _ILSEXT                                   C186       7       7       1   RUNTIME     
      _Vector_38                                FFB2       2       2       0   .abs_section_ffb2
 
 *********************************************************************************************
 UNUSED-OBJECTS SECTION
 ---------------------------------------------------------------------------------------------
+NOT USED PROCEDURES
+rtshc12.c.o (ansisi.lib):
+  _BSHL _BSHRS _BSHRU _BDIVMODU _BDIVMODS _ISHL _ISHRU _ISHRS _LSHL _LSHRU 
+  _LSHRS _LADD _LSUB _LAND _LOR _LXOR _LCMP _LCMP_PP _LNEG _LCOM _LINC _LDEC 
+  _LMUL _LMULU16x32 _LMULS16x32 _lDivMod _LDIVU _NEG_P _LDIVS _LMODU _LMODS 
+  _COPY _CASE_DIRECT _CASE_DIRECT_BYTE _CASE_CHECKED _CASE_CHECKED_BYTE 
+  _CASE_SEARCH _CASE_SEARCH_BYTE _CASE_SEARCH_8 _CASE_SEARCH_8_BYTE _FCALL 
+  _FPCMP 
+NOT USED VARIABLES
+rtshc12.c.o (ansisi.lib):
+  _PowOfTwo_8 _PowOfTwo_16 _PowOfTwo_32 errno 
 
 *********************************************************************************************
 COPYDOWN SECTION
 ---------------------------------------------------------------------------------------------
-------- ROM-ADDRESS: 0xC173 ---- SIZE       2 ---
+------- ROM-ADDRESS: 0xC18D ---- SIZE       2 ---
 Filling bytes inserted
  0000
 
@@ -1232,14 +1255,14 @@ OBJECT-DEPENDENCIES SECTION
 ---------------------------------------------------------------------------------------------
 Init                      USES _startupData 
 _Startup                  USES __SEG_END_SSTACK Init main 
-msDelay                   USES _TSCR1 _TSCR2 _TIOS _TCNT _TC0 _TFLG1 
-main                      USES CANInit _CANCTL0 _CANRFLG _CANRIER CANTx 
-                                msDelay 
+msDelay                   USES _TCNT _TC0 _TIOS _TFLG1 _ILSEXT _LCMP_P 
+main                      USES CANInit _CANCTL0 _TSCR2 _TSCR1 _CANRFLG 
+                                _CANRIER CANTx msDelay 
 CANInit                   USES _CANCTL0 _CANCTL1 _CANBTR0 _CANBTR1 _CANIDAC 
                                 _CANIDAR0 _CANIDMR0 _CANIDAR1 _CANIDMR1 
 CANTx                     USES _CANTFLG _CANTBSEL _CANTXIDR0 _CANTXDSR0 
                                 _CANTXDLR _CANTXTBPR 
-CANRxISR                  USES _CANRXDLR _CANRXDSR0 _CANRFLG 
+CANRxISR                  USES _CANRXDLR _CANRXDSR0 _DDRAB _PORTAB _CANRFLG 
 _Vector_38                USES CANRxISR 
 
 *********************************************************************************************
@@ -1254,7 +1277,11 @@ DEPENDENCY TREE
  |  +- CANTx               
  |  |    
  |  +- msDelay             
- |       
+ |     | 
+ |     +- _ILSEXT             
+ |     |    
+ |     +- _LCMP_P             
+ |          
  +- _Startup            
     | 
     +- Init                
@@ -1271,6 +1298,6 @@ STATISTIC SECTION
 
 ExeFile:
 --------
-Number of blocks to be downloaded: 5
-Total size of all blocks to be downloaded: 377
+Number of blocks to be downloaded: 6
+Total size of all blocks to be downloaded: 403
 

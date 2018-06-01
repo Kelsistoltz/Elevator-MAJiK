@@ -99,12 +99,15 @@ unsigned char CANTx(unsigned long id, unsigned char priority, unsigned char leng
 
 interrupt VectorNumber_Vcanrx void CANRxISR(void) {
   unsigned char length, index;
-  unsigned char rxdata[8]; 
+  unsigned char rxdata[8];
   
   length = (CANRXDLR & 0x0F); 
   for (index=0; index < length; index++) {
     rxdata[index] = *(&CANRXDSR0 + index);   // Get received data  
   }
+  
+  DDRA = 0xFF;
+  PORTA = 0x80;
   
   CANRFLG |= 0x01;                            // Clear the received flag RXF and check for NEW messages - resets the interrupt
   
