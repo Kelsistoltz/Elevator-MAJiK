@@ -1,3 +1,6 @@
+#ifndef DELAY_H
+#define DELAY_H
+
 #include <hidef.h>                      /* common defines and macros */
 #include "derivative.h"                 /* derivative-specific definitions */
 
@@ -37,3 +40,5 @@ void msDelay( unsigned long msTime )
 
   TIOS_IOS0 = 0;                        /* all done. Turn-off OC on TC0 */
 }
+
+#endif

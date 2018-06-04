@@ -1,16 +1,16 @@
 OPEN source 0 0 60 39
 Source < attributes TOOLTIP on,TOOLTIP_FORMAT signed,TOOLTIP_MODE details,FREEZE off,MARKS off
 OPEN assembly 60 0 40 31
-Assembly < attributes ADR on,CODE off,ABSADR on,SYMB off,FORMAT Auto,FREEZE off,TOPPC 0xC07E
+Assembly < attributes ADR on,CODE off,ABSADR on,SYMB off,FORMAT Auto,FREEZE off,TOPPC 0xC130
 OPEN register 60 31 40 25
 Register < attributes FORMAT AUTO,COMPLEMENT None
 OPEN memory 60 56 40 44
-Memory < attributes FORMAT hex,COMPLEMENT None,WORD 1,ASC on,ADR on,MODE automatic,UPDATERATE 10,ADDRESS 0x80
+Memory < attributes FORMAT hex,COMPLEMENT None,WORD 1,ASC on,ADR on,MODE periodical,UPDATERATE 1,ADDRESS 0x80
 OPEN Mcuregisters 0 80 60 20
-MCURegisters < attributes COLUMNWIDTH 0, 150,COLUMNWIDTH 1, 100,COLUMNWIDTH 2, 350,FORMAT DEC,UPDATERATE 10,MODE automatic
+MCURegisters < attributes COLUMNWIDTH 0, 150,COLUMNWIDTH 1, 100,COLUMNWIDTH 2, 350,EXPAND MEBI,FORMAT DEC,UPDATERATE 1,MODE automatic
 OPEN Data 0 39 60 42
-Data < attributes SCOPE external,COMPLEMENT None,FORMAT Hex,MODE automatic,SORT NotSort,UPDATERATE 10,NAMEWIDTH 16
+Data < attributes SCOPE external,COMPLEMENT None,FORMAT Hex,MODE periodical,SORT NotSort,UPDATERATE 1,NAMEWIDTH 16
 bckcolor 50331647
 font 'Courier New' 9 BLACK
 AUTOSIZE on
-ACTIVATE "Source" "Register" "Assembly" "Memory" "MCURegisters" "Data"
+ACTIVATE "Register" "Assembly" "Source" "Data" "Memory" "MCURegisters"

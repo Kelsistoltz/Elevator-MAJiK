@@ -1,6 +1,7 @@
 #include <hidef.h>      /* common defines and macros */
 #include "derivative.h"      /* derivative-specific definitions */
 #include "can.h"
+#include "elevator.h"
 
 /******************************************************
   CANInit()
@@ -12,8 +13,6 @@
 void CANInit(void){
   CANCTL0_INITRQ = TRUE;            // initialize can controller
   while(CANCTL1_INITAK == FALSE);   // wait for initialization to be acknowledged
-
-  PORTA = 0x01;
   
   // bitrate = 250kbps
   CANCTL1 = 0xC0;                   // Sets can bus frequency to the axman's bus frequency (8mHz)
@@ -30,7 +29,7 @@ void CANInit(void){
 	while(CANCTL0_SYNCH == FALSE);
 }
 
-int CANTx(unsigned short CANTx_ID, volatile unsigned char * CANTx_Msg, unsigned char CANTx_DLR, unsigned char CANTx_Pri){
+int CANTx(unsigned short CANTx_ID, volatile unsigned char CANTx_Msg[], unsigned char CANTx_DLR, unsigned char CANTx_Pri){
   int i;
   char CANTx_Buff;
   
@@ -59,5 +58,17 @@ int CANTx(unsigned short CANTx_ID, volatile unsigned char * CANTx_Msg, unsigned 
 }
 
 interrupt VectorNumber_Vcanrx void CANRxISR(void){
+  if (CANRXIDR01 == (EC_CANID << 5))
+    if(CANRXDSR0 == *EC_FLR1 || CANRXDSR0 == (*EC_FLR1 | *EC_ENBL)){      
+      PORTB = ~SEG_ONE;
+      PTS   = 0x00;    
+    }
+    else if(CANRXDSR0 == *EC_FLR2 || CANRXDSR0 == (*EC_FLR2 | *EC_ENBL)){      
+      PORTB = ~SEG_TWO;
+    }
+    else if(CANRXDSR0 == *EC_FLR3 || CANRXDSR0 == (*EC_FLR3 | *EC_ENBL)){      
+      PORTB = ~SEG_THREE;      
+    }
+    
   CANRFLG |= 0x01;   // Reset RX interrupt flag
-}
+} 

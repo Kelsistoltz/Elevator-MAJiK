@@ -1,3 +1,6 @@
+#ifndef CAN_H
+#define CAN_H
+
 void CANInit(void);
 int CANTx(unsigned short CANTx_ID, volatile unsigned char * CANTx_Msg, unsigned char CANTx_DLR, unsigned char CANTx_Pri);
 interrupt VectorNumber_Vcanrx void CANRxISR(void);
@@ -15,4 +18,6 @@ interrupt VectorNumber_Vcanrx void CANRxISR(void);
 #define CANTXIDR01 (*(volatile unsigned short int * const) &CANTXIDR0)
 #define CANRXIDR01 (*(volatile unsigned short int * const) &CANRXIDR0)
 
-static const short NODE_ID = 0x100;
+static const short NODE_ID = 0x101;
+
+#endif
