@@ -13,6 +13,7 @@ h1 {
 	font-family: "Times New Roman";	
 	text-align: center;
 	position: relative;
+	/* margin: auto; */
 }
 
 a:link {
@@ -119,19 +120,19 @@ a:hover{
 .text_lbl{
     float: left;
 	height: 10px;
-    width: 115px;
+    width: 140px;
     text-align: right;
     padding: : 0px 10px 0px 10px
 } 
 .text_ip {
-    width:150px;
+    width:130px;
     text-align: left;
     padding: 0px 10px 0px 10px;
     margin: 2px 5px;
 }
 	
 .ogForm {
-	width: 300px;
+	width: 315px; 
     /* border: 5px solid black; */
     padding: 5px;
     margin: 5px;
