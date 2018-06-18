@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Project VI - Home</title>
+		
+		<meta name="description" content="Home Page" />
+		<meta name="robots" content="noindex nofollow" />
+		<meta html-equiv="author" content="MAJiK" />
+		<meta html-equiv="pragma" content="no-cache" />
+		<meta name="viewport" content="width=device-Width, initial-scale=1.0" />
+	
+		<link href="../css/homesty.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="#">Home</a>
+			<a href="../logbook/mike.html">Mike Luong's Logs</a>
+			<a href="../logbook/aaron.html">Aaron's Logs</a>
+			<a href="../logbook/josh.html">Josh's Logs</a>
+			<a href="../logbook/kelsy.html">Kelsi's Logs</a>				
+			<a href="about.html">About Us and the Project</a>
+			<a href="plan.html">Project Plan</a>
+			<a href="login.html">Login</a>
+		</div>
+		
+		<div id="main">
+			<h1><span class="open" style="cursor:pointer" onclick="openNav()">&#9778; </span>Home Page</h1>
+			<div id="header">
+			<p>Welcome to <emp>MAJiK's</emp> project website. Here we will provide our log books, planning, 
+			and our progress of our team's project.</p><br />
+			</div>
+			<button onclick="topFunction()" id="gtt" title="GoToTop" color="red"><strong>Top of Page</strong></button>
+			<div class="footer">&copy MAJiK</div>	
+		</div>
+		<script>
+			function topFunction(){
+				document.body.scrollTop = 0;
+				document.documentElement.scrollTop = 0;
+			}
+			
+			<!-- Functions for side menu -->
+			function openNav() {
+   				document.getElementById("mySidenav").style.width = "250px";
+    			document.getElementById("main").style.marginLeft = "250px";
+			}
+
+			function closeNav() {
+    			document.getElementById("mySidenav").style.width = "0";
+    			document.getElementById("main").style.marginLeft= "0";
+			}
+		</script>
+	</body>
+</html>

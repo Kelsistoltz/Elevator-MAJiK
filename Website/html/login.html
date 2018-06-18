@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="description" content="login Page" />
+		<meta name="robots" content="noindex nofollow" />
+		<meta html-equiv="author" content="MAJiK" />
+		<meta html-equiv="pragma" content="no-cache" />
+		<meta name="viewport" content="width=device-idth, initial-scale=1.0" />
+		
+		<link href="../css/homesty.css" type="text/css" rel="stylesheet" />
+	<style>
+		
+	</style>
+		<title>Login - No BOTS</title>
+	</head>
+	<body>
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="home.html">Home</a>
+			<a href="../logbook/mike.html">Mike Luong's Logs</a>
+			<a href="../logbook/aaron.html">Aaron's Logs</a>
+			<a href="../logbook/josh.html">Josh's Logs</a>
+			<a href="../logbook/kelsy.html">Kelsi's Logs</a>				
+			<a href="about.html">About Us and the Project</a>
+			<a href="plan.html">Project Plan</a>
+			<a href="login.html">Login</a>
+		</div>
+		<form action="../php/login.php" method="post" id="login">
+		<div id="main" class="ogForm">
+			<h1><span class="open" style="cursor:pointer" onclick="openNav()">&#9778;</span> Please log In</h1>
+			<label for="username" class="text_lbl">Username:</label>
+				<input class="text_ip" type="text" name="uname" placeholder="Enter Username" />
+			
+			<label for="pass" class="text_lbl">Password:</label>
+				<input class="text_ip" type="password" name="password" placeholder="Enter Password" />
+			
+			<br><br><input class="form_but"type="submit" style="float:right;" value="Log In" />
+			<a style="float:left;" href="request_access.html">Request Access</a>
+		</div>
+		</form>
+		
+		<script>
+			function topFunction(){
+				document.body.scrollTop = 0;
+				document.documentElement.scrollTop = 0;
+			}
+			<!-- Functions for side menu -->
+			function openNav() {
+   				document.getElementById("mySidenav").style.width = "250px";
+    			document.getElementById("main").style.marginLeft = "250px";
+			}
+
+			function closeNav() {
+    			document.getElementById("mySidenav").style.width = "0";
+    			document.getElementById("main").style.marginLeft= "0";
+			}
+		</script>	
+			
+	</body>
+</html>

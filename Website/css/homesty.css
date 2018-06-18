@@ -1,0 +1,155 @@
+
+.footer{
+	position: fixed;
+	text-align: center;
+	bottom: 0px;
+	width: 100%;
+}
+
+h1 {
+	width: 295px;
+	border: 3px solid black;
+	color: black;
+	font-family: "Times New Roman";	
+	text-align: center;
+	position: relative;
+}
+
+a:link {
+	color: blue;
+	text-decoration: none;
+}
+a:visited{
+	color: purple;
+	text-decoration: underline;
+}
+
+a:hover{
+	color: black;
+	text-decoration: underline;
+}
+ul.home{
+	list-style-type: square;	
+}
+
+/*************Table Properties**************/
+#table{
+	width: 100%;
+	border-collapse: collapse;
+}
+th{
+	background-color: #01B9F5;
+}
+th, td{
+	text-align: center;
+	
+	/*padding: 10px;*/
+	/*border-bottom: 1px solid #ddd;*/
+}
+tr:hover{
+	background-color: #f5f5f5;	
+}
+
+.ks:hover{
+	background-color: #0B6623
+}
+.jy:hover{
+	background-color: #FF66CC
+}
+.ml:hover{
+	background-color: #028A0F
+}
+.ak:hover{
+	background-color: #DD571C
+}
+.mult:hover{
+	background-color: #BE93D4
+}
+.all:hover{
+	background-color: #D9DDDC
+}
+
+/**********Side Navigation**********/
+.sidenav{
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	transition: 0.7s;
+	padding-top: 50px;
+}
+.sidenav a{
+	padding: 10px 10px 10px 30px;
+	font-size: 20px;
+	color: #C0C0C0;
+	display: block;
+	transition: 0.5s;
+}
+a:hover{
+	color: blue;	
+	text-decoration: none;
+}
+.sidenav .closebtn{
+	position: absolute;
+	top: 0;
+	right: 10px;
+	font-size: 25px;
+	margin-left: 50px;
+}
+#main {
+    transition: margin-left 0.7s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.open{
+	color: black;
+	clear: none;
+	float: both;
+}
+
+/**********Form Styling**********/
+.text_lbl{
+    float: left;
+	height: 10px;
+    width: 115px;
+    text-align: right;
+    padding: : 0px 10px 0px 10px
+} 
+.text_ip {
+    width:150px;
+    text-align: left;
+    padding: 0px 10px 0px 10px;
+    margin: 2px 5px;
+}
+	
+.ogForm {
+	width: 300px;
+    /* border: 5px solid black; */
+    padding: 5px;
+    margin: 5px;
+}
+ input[type=submit] {
+    text-align: center;
+	float: left;
+}
+.form_but{
+	color: black;
+	padding: 0px 10px 0px 10px;
+}
+.form_but:hover{
+	color: blue;
+}
+
+
+
+
+
+
