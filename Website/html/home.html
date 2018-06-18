@@ -8,25 +8,45 @@
 		<meta html-equiv="author" content="MAJiK" />
 		<meta html-equiv="pragma" content="no-cache" />
 		<meta name="viewport" content="width=device-Width, initial-scale=1.0" />
+		
+		
+		<!-- Bootstrap core CSS -->
+		<link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="jumbotron.css" rel="stylesheet">
+
+		<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+		<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
 	
-		<link href="../css/homesty.css" type="text/css" rel="stylesheet" />
+		<link href="css/homesty.css" type="text/css" rel="stylesheet" />
 	</head>
 	<body>
 		<div id="mySidenav" class="sidenav">
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 			<a href="#">Home</a>
-			<a href="../logbook/mike.html">Mike Luong's Logs</a>
-			<a href="../logbook/aaron.html">Aaron's Logs</a>
-			<a href="../logbook/josh.html">Josh's Logs</a>
-			<a href="../logbook/kelsy.html">Kelsi's Logs</a>				
+			<a href="logbook/mike.php">Mike Luong's Logs</a>
+			<a href="logbook/aaron.php">Aaron's Logs</a>
+			<a href="logbook/josh.php">Josh's Logs</a>
+			<a href="logbook/kelsy.php">Kelsi's Logs</a>				
 			<a href="about.html">About Us and the Project</a>
 			<a href="plan.html">Project Plan</a>
 			<a href="login.html">Login</a>
 		</div>
 		
-		<div id="main">
+		<div id="main" class = "jumbotron">
 			<h1><span class="open" style="cursor:pointer" onclick="openNav()">&#9778; </span>Home Page</h1>
-			<div id="header">
+			<div id="header" class = "container">
 			<p>Welcome to <emp>MAJiK's</emp> project website. Here we will provide our log books, planning, 
 			and our progress of our team's project.</p><br />
 			</div>
@@ -38,7 +58,6 @@
 				document.body.scrollTop = 0;
 				document.documentElement.scrollTop = 0;
 			}
-			
 			<!-- Functions for side menu -->
 			function openNav() {
    				document.getElementById("mySidenav").style.width = "250px";
@@ -49,6 +68,6 @@
     			document.getElementById("mySidenav").style.width = "0";
     			document.getElementById("main").style.marginLeft= "0";
 			}
-		</script>
+		</script>	
 	</body>
 </html>

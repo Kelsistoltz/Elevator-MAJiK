@@ -7,61 +7,71 @@
 		<meta html-equiv="author" content="MAJiK" />
 		<meta html-equiv="pragma" content="no-cache" />
 		<meta name="viewport" content="width=device-idth, initial-scale=1.0" />
-		<link href="../css/homesty.css" type="text/css" rel="stylesheet" />
-	<style>
-		
-	</style>
-		<title>Login - No BOTS</title>
+		<link href="css/homesty.css" type="text/css" rel="stylesheet" />
+
+		<title>Request Access - No BOTS</title>
 	</head>
 	<body>
 		<div id="mySidenav" class="sidenav">
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 			<a href="home.html">Home</a>
-			<a href="../logbook/mike.html">Mike Luong's Logs</a>
-			<a href="../logbook/aaron.html">Aaron's Logs</a>
-			<a href="../logbook/josh.html">Josh's Logs</a>
-			<a href="../logbook/kelsy.html">Kelsi's Logs</a>				
+			<a href="logbook/mike.php">Mike Luong's Logs</a>
+			<a href="logbook/aaron.php">Aaron's Logs</a>
+			<a href="logbook/josh.php">Josh's Logs</a>
+			<a href="logbook/kelsy.php">Kelsi's Logs</a>				
 			<a href="about.html">About Us and the Project</a>
 			<a href="plan.html">Project Plan</a>
 			<a href="login.html">Login</a>
 		</div>
 	
-		<form action="../php/request.php" class="login" method="post" target="_self">
+		<form  id="reqAccess" action="php/request.php" class="login" method="post" target="_self">
 			<div id="main" class="ogForm">
 			<br>
 				<h1><span class="open" style="cursor:pointer" onclick="openNav()">&#9778;</span> Request Access</h1>
-				<label for="firstName" class="text_lbl">First Name:</label>
-					<input type="text" name="fname" class="text_ip" />
 				
-				<label for="lastName" class="text_lbl">Last Name:</label>
-					<input type="text" name="lname" class="text_ip" />
+				<div>
+					<label for="fname" class="text_lbl" ><b>First Name:</b></label>
+					<input id="fname" class="text_ip" type="text" name="firstname"  /> 
+					
+				</div>
+				
+				<div>
+					<label for="lname" class="text_lbl"><b>Last Name:</b></label>  
+					<input id="lname" class="text_ip" type="text" name="lastname"  /> 
+					
+				</div>	
 				<hr />
 				
-				<label for="stdtNum" class="text_lbl">Student Number:</label>
+				<label for="stdtNum" class="text_lbl"><b>Student Number:</b></label>
 					<input type="text" name="snum" class="text_ip" />
 				
-				<label for="email" class="text_lbl">Email Address:</label>
+				<label for="email" class="text_lbl"><b>Email Address:</b></label>
 					<input type="email" name="email" class="text_ip" />
 				<hr />	
-				<label for="username" class="text_lbl">Username:</label>
-					<input type="text" name="uname" class="text_ip" placeholder="Enter Username"/>
 				
-				<label for="pass" class="text_lbl">Password:</label>
-					<input type="password" name="password" class="text_ip" placeholder="Enter Password"/>
-					
+				<div>
+					<label for="username" class="text_lbl"><b>Username:</b></label>
+						<input id = "username" type="text" name="uname" class="text_ip" placeholder="Enter Username"/>
+						
+				</div>
+				<div>
+				<label for="pass" class="text_lbl"><b>Password:</b></label>
+					<input id="pass" type="password" name="password" class="text_ip" placeholder="Enter Password"/>
+	
+				</div>
 				<hr />
-					
-				<label for="birthDate" class="text_lbl">Birth Date:</label>
+				<div>	
+				<label for="birthDate" class="text_lbl"><b>Birth Date:</b></label>
 					<input type="date" name="birthday" class="text_ip" />
-				
-			
-				<label for="gender" class="text_lbl">Gender:</label>
+				</div>
+				<div>
+				<label for="gender" class="text_lbl"><b>Gender:</b></label>
 				<ul>
-					<br><input type="radio" name="gender" value="Male" checked>Male
-					<input type="radio" name="gender" value="Female" >Female
+					<input type="radio" name="gender" value="Male" checked>Male
+					<input type="radio" name="gender" value="Female" >Female<br>
 					<input type="radio" name="gender" value="Mental Disorder" >Mental Disorder<br>
 				</ul>	
-				<label for="colour" class="text_lbl">Favourite Colour:</label>
+				<label for="colour" class="text_lbl"><b>Favourite Colour:</b></label>
 					<select name="colour" class="text_ip" >
 						<option value="red">Red</option>
 						<option value="orange">Orange</option>
@@ -72,24 +82,20 @@
 						<option value="violet">Violet</option>
 					</select>
 				
+				</div>
 				
 				<br>
-				<br><input class="form_but" type="submit" style="float:right;" value="Request Access" onlcick="alert('Access Requested')" />
+				<br><input id="submit" class="form_but" type="submit" style="float:right;" value="Request Access" onlcick="alert('Access Requested')" />
+				
 			</div>
+			<a id="firstNameFeedback"></a><br>
+			<a id="lastNameFeedback"></a><br>
+			<a id="feedback"></a><br>
+			<a id="feedbackk"></a>	
 			
 		</form>	
-		<script>
-			
-			<!-- Functions for side menu -->
-			function openNav() {
-   				document.getElementById("mySidenav").style.width = "250px";
-    			document.getElementById("main").style.marginLeft = "250px";
-			}
-
-			function closeNav() {
-    			document.getElementById("mySidenav").style.width = "0";
-    			document.getElementById("main").style.marginLeft= "0";
-			}
-		</script>
+		<script src="js/formEvent.js"></script>
+		<!-- <script src="js/EventListener.js"> </script> -->
+		<script src="js/project.js"></script>
 	</body>
 </html>

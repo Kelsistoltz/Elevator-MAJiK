@@ -9,10 +9,10 @@
 		<div id="mySidenav" class="sidenav">
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 			<a href="home.html">Home</a>
-			<a href="../logbook/mike.html">Mike Luong's Logs</a>
-			<a href="../logbook/aaron.html">Aaron's Logs</a>
-			<a href="../logbook/josh.html">Josh's Logs</a>
-			<a href="../logbook/kelsy.html">Kelsi's Logs</a>				
+			<a href="../logbook/mike.php">Mike Luong's Logs</a>
+			<a href="../logbook/aaron.php">Aaron's Logs</a>
+			<a href="../logbook/josh.php">Josh's Logs</a>
+			<a href="../logbook/kelsy.php">Kelsi's Logs</a>				
 			<a href="about.html">About Us and the Project</a>
 			<a href="plan.html">Project Plan</a>
 			<a href="login.html">Login</a>
@@ -122,22 +122,7 @@
 		<a class="menu" href="../References/S6 Project Charter-2018_V-1.4.pdf">Project Charter</a>
 		</div>
 		<button onclick="topFunction()" class="gtt" title="GoToTop" color="red"><strong>Top of Page</strong></button>
-		<script>
-			function topFunction(){
-				document.body.scrollTop = 0;
-				document.documentElement.scrollTop = 0;
-			}
-			<!-- Functions for side menu -->
-			function openNav() {
-   				document.getElementById("mySidenav").style.width = "250px";
-    			document.getElementById("main").style.marginLeft = "250px";
-			}
-
-			function closeNav() {
-    			document.getElementById("mySidenav").style.width = "0";
-    			document.getElementById("main").style.marginLeft= "0";
-			}
-		</script>	
+		<script src="../js/project.js"></script>
 					
 	</body>
 </html>
