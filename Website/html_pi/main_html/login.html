@@ -8,6 +8,17 @@
 		<meta name="viewport" content="width=device-idth, initial-scale=1.0" />
 
 		<link href="../css/homesty.css" type="text/css" rel="stylesheet" />
+
+		<link rel="stylesheet" type="text/css" href="../css/mystyle.css"/>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 	<style>
 
 	</style>
@@ -26,14 +37,15 @@
 			<a href="login.html">Login</a>
 		</div>
 		<form action="../php/login.php" method="post" id="login">
-			<div id="main" class="ogForm">
+
+			<div class="ogForm">
 				<h1><span class="open" style="cursor:pointer" onclick="openNav()">&#9778;</span> Please log In</h1>
 				<hr>
 				<br>
 
 				<div>
 					<label for="username" class="text_lbl">Username:</label>
-					<input id="username" class="text_ip" type="text" name="uname" placeholder="Enter Username" />
+					<input id="username" class="text_ip" type="text" name="uname" placeholder="Enter Username" autofocus />
 					<span id="username_alert"></span>
 				</div>
 
@@ -45,6 +57,7 @@
 
 				<div>
 					<input id="submit" class="form_but" type="submit" value="Log In" onlcick="alert('Access Requested')"/>
+          <a class="button" href="request_access.html">Request Access</a>
 				</div>
 
 			</div>

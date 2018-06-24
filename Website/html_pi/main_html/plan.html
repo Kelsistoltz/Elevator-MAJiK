@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html>
-	<head>	
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />	
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Project Plan</title>
 		<link href="../css/homesty.css" type="text/css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/mystyle.css"/>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 	</head>
 	<body class="size">
 		<div id="mySidenav" class="sidenav">
@@ -12,12 +23,16 @@
 			<a href="../logbook/mike.php">Mike Luong's Logs</a>
 			<a href="../logbook/aaron.php">Aaron's Logs</a>
 			<a href="../logbook/josh.php">Josh's Logs</a>
-			<a href="../logbook/kelsy.php">Kelsi's Logs</a>				
+
+			<a href="../logbook/kelsy.php">Kelsi's Logs</a>
+
 			<a href="about.html">About Us and the Project</a>
 			<a href="plan.html">Project Plan</a>
 			<a href="login.html">Login</a>
 		</div>
-		<div style="overflow-x:auto;" id="main">
+
+		<div class="container" >
+
 		<h1><span class="open" style="cursor:pointer" onclick="openNav()">&#9778;</span> Project Plan</h1>
 		<p>This page is meant to outline the plan for the project. The project is divided into 3 phases:
 		<ul>
@@ -25,20 +40,31 @@
 				<ol>
 					<li>Fully functioning CAN network involving a variety of controlling and controlled devicesand more than two CAN-nodes</li>
 					<li>Test plan and results</li>
-					<li>Develop a Porject Website (Using CSS and HTML)</li>
+
+					<li>Develop a Project Website (Using CSS and HTML)</li>
+
 				</ol>
 			</li>
 			<li><strong>Phase 2</strong>
 				<ol>
-					<li></li>
-					<li></li>
-					<li></li>
+
+					<li>Create a data repository to enable storing data about the elevators position</li>
+					<li>Develop a UI in order to properly control the elevator</li>
+					<li>Creating a Remote Access System</li>
+					<li>Creating Documenst to track progress</li>
 				</ol>
 			</li>
-			
+			<li><strong>Phase 3</strong>
+				<ol>
+					
+				</ol>
+			</li>
+
 		</ul></p><br />
 		<h2>Phase 1</h2>
-		<table id="table">
+
+		<table  class="table table-bordered" id="table">
+
 			<thead>
 				<tr>
 					<th>Phase 1</th>
@@ -64,10 +90,11 @@
 				</tr>
 			</tbody>
 		</table>
-		
+
 		<h2>Phase 2</h2>
-		
-		<table id="table">
+
+		<table class="table table-bordered" id="table">
+
 			<thead>
 				<tr>
 					<th>Phase 2</th>
@@ -77,25 +104,27 @@
 			<tbody>
 				<tr>
 					<th>Data Repository</th>
-					<td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td>
+
+					<td></td><td></td><td>AK JY</td><td>AK JY</td><td>AK JS</td><td>AK JS</td><td>AK JS</td>
 				</tr>
 				<tr>
 					<th>UI</th>
-					<td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td>
+					<td>ML</td><td>ML</td><td>KS ML</td><td>KS ML</td><td>KS ML</td><td>KS ML</td><td>KS ML</td>
 				</tr>
 				<tr>
 					<th>Remote Access System</th>
-					<td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td>
+					<td></td><td></td><td>AK KS</td><td>AK JS</td><td>KS ML</td><td>ML JY</td><td>AK ML</td>
 				</tr>
 				<tr>
 					<th>Other Documents</th>
-					<td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td>
+					<td>AK JY KS</td><td>AK JY KS</td><td>ALL</td><td>ALL</td><td>ALL</td><td>ALL</td><td>ALL</td>
 				</tr>
 			</tbody>
 		</table>
-		
+
 		<h2>Phase 3</h2>
-		<table id="table">
+		<table class="table table-bordered" id="table">
+
 			<thead>
 				<tr>
 					<th>Phase 3</th>
@@ -118,12 +147,16 @@
 			</tbody>
 		</table>
 		<h2>Links to Resources</h2>
-		<a class="menu" href="../References/Elevator System.pdf.odt">Elevator System Diagram</a><br />
-		<a class="menu" href="../References/S6 Project Charter-2018_V-1.4.pdf">Project Charter</a>
+
+
+		<ul>
+	 		<li><a class="menu" href="../References/Elevator System.pdf.odt">Elevator System Diagram</a><br /></li>
+	 		<li><a class="menu" href="../References/S6 Project Charter-2018_V-1.4.pdf">Project Charter</a></li>
+		</ul>
+
 		</div>
 		<button onclick="topFunction()" class="gtt" title="GoToTop" color="red"><strong>Top of Page</strong></button>
 		<div class="footer">&copy MAJiK</div>
 		<script src="../js/project.js"></script>
-					
 	</body>
 </html>

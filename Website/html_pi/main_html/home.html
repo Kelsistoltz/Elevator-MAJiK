@@ -2,15 +2,27 @@
 <html>
 	<head>
 		<title>Project VI - Home</title>
-		
+
 		<meta name="description" content="Home Page" />
 		<meta name="robots" content="noindex nofollow" />
 		<meta html-equiv="author" content="MAJiK" />
 		<meta html-equiv="pragma" content="no-cache" />
 		<meta name="viewport" content="width=device-Width, initial-scale=1.0" />
 		<link rel="icon" href="themajiklogo.png">
+
+		<link href="../css/homesty.css" type="text/css" rel="stylesheet" />
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 	
 		<link href="../css/homesty.css" type="text/css" rel="stylesheet" />
+
 	</head>
 	<body>
 		<div id="mySidenav" class="sidenav">
@@ -19,26 +31,28 @@
 			<a href="../logbook/mike.php">Mike Luong's Logs</a>
 			<a href="../logbook/aaron.php">Aaron's Logs</a>
 			<a href="../logbook/josh.php">Josh's Logs</a>
-			<a href="../logbook/kelsy.php">Kelsi's Logs</a>				
+			<a href="../logbook/kelsy.php">Kelsi's Logs</a>
 			<a href="about.html">About Us and the Project</a>
 			<a href="plan.html">Project Plan</a>
 			<a href="login.html">Login</a>
 		</div>
-		
-		<div > <!--id="main" -->
+
+
+		<div class="container-fluid"> <!--id="main" -->
 			<h1><span class="open" style="cursor:pointer" onclick="openNav()">&#9778; </span>Home Page</h1>
 			<div id="header">
 			<img src="../images/themajiklogo.png"align"right" alt="MAJiK Logo" title="Logo" width="200"/>
-			<p>Welcome to <emp>MAJiK's</emp> project website. Here we will provide our log books, planning, 
+			<p>Welcome to <emp>MAJiK's</emp> project website. Here we will provide our log books, planning,
+
 			and our progress of our team's project. </p><br />
 			</div>
 			<button onclick="topFunction()" id="gtt" title="GoToTop" color="red"><strong>Top of Page</strong></button>
 			<p id="demo"></p>
+
 			<div class="footer">&copy MAJiK</div>	
 		</div>
 		<script src="../js/project.js"></script> 
 		<script>
-			
 			var d = new Date();
 			document.getElementById("demo").innerHTML = d;
 		</script>
