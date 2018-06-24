@@ -1,0 +1,64 @@
+	
+	
+	body { font-family:  Georgia sans-serif;}
+
+	p,ul,ol { font-size: 100%;
+		line-height: 20px;
+		letter-spacing: 0px;
+		text-align: justify;
+	}
+	
+	p {text-indent: 15px;}
+	
+	h1 {font-size: 160%;}
+	
+	h2 {font-size: 125%}
+	
+	img {height: 300px;
+		 }
+	figcaption {font-style: italic;
+				text-align: center;
+				font-size: 90%;
+	}
+	
+	.mkbold {font-weight: bold;
+			 color: red; }
+	
+	.mkunderlined {text-decoration: underline;
+					color: red; }
+	
+	#hcs12 { font-weight: bold;
+		color: blue;}
+	
+	#can { font-weight: bold;
+		color: blue;}
+	
+	#buttons { font-weight: bold;
+		color: blue;  }
+
+
+	body { width: 950px;
+		   padding: 0px 10px 0px 10px;
+		   margin: 0px auto 0px auto;
+		   border: 2px solid black;}
+	
+	figure {
+		 padding: 0px auto 0px auto;
+		 border: 2px solid green;
+		 border-radius: 25px;
+		 }
+		 
+	img {height: 300px;
+		 display: block;  /* Notice that img elements are inline */
+		 margin: 0px auto 0px auto;
+		 border: 2px solid blue;
+		 box-shadow: 10px 10px 5px gray;
+		 
+		 }
+		 
+	ul {list-style-type: square; }
+	/*ul {list-style-image: URL("../images/Conestoga_logo.jpg");} */
+	ol {list-style-type: lower-roman;}
+	
+	
+	
