@@ -7,12 +7,15 @@
 
 h1 {
 	width: auto;
-	border: 3px solid black;
 	color: black;
 	font-family: "Times New Roman";
 	text-align: left;
 	position: relative;
+}
 
+hr {
+	height: 3px;
+	background-color: black;
 }
 
 a:link {
@@ -132,7 +135,7 @@ a:hover{
 }
 
 .ogForm {
-	width: 315px;
+	width: 1000px;
     /* border: 5px solid black; */
     padding: 5px;
     margin: 5px;
@@ -141,6 +144,7 @@ a:hover{
     text-align: center;
 	float: left;
 }
+
 .form_but{
 	color: black;
 	padding: 0px 10px 0px 10px;
@@ -162,8 +166,10 @@ a:hover{
 	margin: auto;
 }
 
-
-
+body{
+	width: 50%;
+	padding: 16px;
+}
 
 /**********Request Access Image Rollover**********/
 #container{
