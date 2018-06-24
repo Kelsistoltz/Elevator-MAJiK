@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="../css/homesty.css" type="text/css" rel="stylesheet" />
+	<style>
+		
+	</style>
+		<title>Aaron Kruck's's Log Book</title>
+	</head>
+	<body>
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="../main_html/home.html">Home</a>
+			<a href="../logbook/mike.html">Mike Luong's Logs</a>
+			<a href="../logbook/aaron.html">Aaron's Logs</a>
+			<a href="../logbook/josh.html">Josh's Logs</a>
+			<a href="../logbook/kelsy.html">Kelsi's Logs</a>				
+			<a href="../main_html/about.html">About Us and the Project</a>
+			<a href="../main_html/plan.html">Project Plan</a>
+			<a href="../main_html/login.html">Login</a>
+		</div>
+		<div id="main">
+			<h1><span class="open" style="cursor:pointer" onclick="openNav()">&#9778;</span> Aaron's Log Book</h1>
+			<ul>
+				<h2 class="weeklog" >Week 3</h2>
+				<li><strong>Monday, May 14th</strong><br>
+				<p>Monday was a holiday (Victoria Day). Nothing was done on this day.</p></li>
+				<li><strong>Tuesday, May 15th</strong><br>
+				<p>Nothing was done in Project. There was a math quiz that I'm pretty sure I failed.</p></li>
+				<li><strong>Wednesday, May 16th</strong><br>
+				<p>Today Josh and Kelsi continued to fiddle with the hardware. Josh managed to send messages that changed the states of LED's. 
+				I worked briefly on the website, following the assignment.</p></li>
+				<li><strong>Thursday, May 17th</strong><br>
+				<p>Worked on the Project Website. Followed the assignment and added some new things to spice it up. Added a side navigation menu to most of the pages.
+				Mike took this code and used it and added it to every page. The details on each page still have yet to be filled in. Started also today on CSS styling
+				in order to give the page some flair. </p></li>
+				<li><strong>Friday, May 18th</strong><br>
+				<p>Goofed off for 6 hours after our 11 AM Thermo Class. Played video games, and then took the 7 PM quiz (nailed it 100%). Then went to go see SOLO: A Star Wars Story.</p></li>
+				<h2 class="weeklog" >Week 4</h2>
+				<li><strong>Monday, May 28th</strong><br>
+				<p>Worked on functions of website. Added l9ogs content, and spruced it up. I also started using the pi as a webserver.</p></li>
+				<h2 class="weeklog" >Week 5</h2>
+				<p>
+				</p>
+			</ul>
+			
+			<button onclick="topFunction()" id="gtt" title="GoToTop" color="red"><strong>Top of Page</strong></button>
+
+
+		</div>
+		
+		<script>
+			function topFunction(){
+				document.body.scrollTop = 0;
+				document.documentElement.scrollTop = 0;
+			}
+			<!-- Functions for side menu -->
+			function openNav() {
+   				document.getElementById("mySidenav").style.width = "250px";
+    			document.getElementById("main").style.marginLeft = "250px";
+			}
+
+			function closeNav() {
+    			document.getElementById("mySidenav").style.width = "0";
+    			document.getElementById("main").style.marginLeft= "0";
+			}
+		</script>	
+	</body>
+</html>
