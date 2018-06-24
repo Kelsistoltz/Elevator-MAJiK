@@ -178,15 +178,15 @@ body{
 
 a.button:link{
 	text-indent: -9999px;
-	background-image: url(../images/aaron.jpg);
+	background-image: url(../images/req.gif);
 	background-size: 150px 50px;
 	width: 150px;
 	height: 50px;
 	display: inline-block;
 }
 a.button:active{
-	background-image: url(../images/fig2.jpg);
+	background-image: url(../images/req1.png);
 }
 a.button:hover{
-	background-image: url(../images/mike.jpg);
+	background-image: url(../images/req2.png);
 }
