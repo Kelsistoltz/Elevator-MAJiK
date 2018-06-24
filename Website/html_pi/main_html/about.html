@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta name="viewport" content="width=device-idth, initial-scale=1.0" />
+		<title>Project VI - About</title>
+		<link href="../css/homesty.css" type="text/css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/mystyle.css"/>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="home.html">Home</a>
+			<a href="../logbook/mike.php">Mike Luong's Logs</a>
+			<a href="../logbook/aaron.php">Aaron's Logs</a>
+			<a href="../logbook/josh.php">Josh's Logs</a>
+			<a href="../logbook/kelsy.php">Kelsi's Logs</a>
+			<a href="about.html">About Us and the Project</a>
+			<a href="plan.html">Project Plan</a>
+			<a href="login.html">Login</a>
+		</div>
+
+		<div class="container-fluid">
+			<h1><span class="open" style="cursor:pointer" onclick="openNav()">&#9778;</span> About Project VI</h1>
+			<h2>Meet the Team</h2>
+			<div class="row">
+				<div class="col-xs-6">
+					<h3>Aaron Kruck</h3>
+					<figure>
+						<img src="../images/aaron.jpg"align"right" alt="MAJiK Logo" title="Logo" width="150"/>
+						<figcaption>My name is Aaron Kruck. I like Swimming, Playing Games, and I can solve the Rubix Cube</figcaption>
+					</figure>
+				</div>
+				<div class="col-xs-6">
+					<h3>Josh Yonathan</h3>
+					<figure>
+						<img src="../images/aaron.jpg"align"right" alt="MAJiK Logo" title="Logo" width="150"/>
+						<figcaption>Also known as Joshus, I like Building PCs, Greek naming styles, and plaid shirts.</figcaption>
+					</figure>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-6">
+					<h3>Kelsi Stoltz</h3>
+					<figure>
+						<img src="../images/aaron.jpg"align"right" alt="MAJiK Logo" title="Logo" width="150"/>
+						<figcaption>I am triggered when you spell my name wrong. I like Star Wars, Video Games, and my favourite anime is Keijo</figcaption>
+					</figure>
+				</div>
+				<div class="col-xs-6">
+					<h3>Mike Luong</h3>
+					<figure>
+						<img src="../images/mike.jpg"align"right" alt="MAJiK Logo" title="Logo" width="150"/>
+						<figcaption>I'm pretty smart cause I'm Asian</figcaption>
+					</figure>
+				</div>
+			</div>
+
+
+
+
+			<br />
+			<h4>Links: </h4>
+			<ul>
+				<li><a  href="projectdetails.html">Project Details</a></li>
+				<li><a></a></li>
+			</ul>
+			<br />
+			<h4>Educational Video</h4>
+			<br><iframe width="560" height="315" src="https://www.youtube.com/embed/zRpsRKuyi3Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			<h3>Location</h3>
+			<iframe width="560" height="315" src="https://www.google.com/maps?q=Conestoga+College,+850+Fountain+St+S,+Cambridge,+ON+N3H+0A8/&output=embed"></iframe>
+			<br><button onclick="topFunction()" class="gtt" title="GoToTop" color="red"><strong>Top of Page</strong></button>
+			<div class="footer">&copy MAJiK</div>
+		</div>
+
+		<script>
+			function topFunction(){
+				document.body.scrollTop = 0;
+				document.documentElement.scrollTop = 0;
+			}
+			<!-- Functions for side menu -->
+			function openNav() {
+   				document.getElementById("mySidenav").style.width = "250px";
+    			document.getElementById("main").style.marginLeft = "250px";
+			}
+
+			function closeNav() {
+    			document.getElementById("mySidenav").style.width = "0";
+    			document.getElementById("main").style.marginLeft= "0";
+			}
+		</script>
+	</body>
+</html>
