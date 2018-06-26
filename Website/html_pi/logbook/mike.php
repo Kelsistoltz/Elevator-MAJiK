@@ -81,7 +81,7 @@
 <li>RPi IP: 192.168.0.202:22</li>
 <li>Username: pi</li>
 <li>Password: ese</li></ul>
-<p><img src="Image_0.png" /></p>
+<p><img src="cid:Image_0.png" /></p>
 
 
 
@@ -149,7 +149,7 @@
 <ul><li>PJ# -> push buttons</li></ul>
 <li>PS# -> LEDs underneath them</li></ul>
 <p><strong>Wednesday, May 30, 2018</strong></p>
-<ul><li>Push buttons and LEDs config<img src="Image_1.png" /></li></ul>
+<ul><li>Push buttons and LEDs config<img src="cid:Image_1.png" /></li></ul>
 <li>Components are powered by the board and need only a jumper to the ports to use them</li>
 <ul><li>Configure a method to include the on-board buttons and LEDs with the code written on each controller</li></ul></ul>
 
@@ -206,6 +206,25 @@
 <ul><li>Error is persisting through other versions of Visual Studios</li></ul>
 <ul><li>Error most likely has a linker issue</li></ul>
 <ul><li>Revisit with old libraries (TBD)</li></ul></ul>
+
+
+<h1>Week of June 18, 2018</h1>
+<p><strong>Monday, June 18, 2018</strong></p>
+<ul><li>Revisited last years materials to implement databases and authenticated users</li></ul>
+<ul><li>Databases created with username, password, and email fields attached to a field number</li></ul></ul>
+
+<p><strong>Wednesday, June 20, 2018</strong></p>
+<ul><li>Javascript Animation for pseudo elevator members page</li></ul>
+<ul><li><u>https://www.w3schools.com/js/js_htmldom_animate.asp</u> </li></ul>
+<li>Temp file emailed to myself to work on at work</li></ul>
+
+<p><strong>Friday, June 29, 2018</strong></p>
+<ul><li>Animation with javascript partially completed.</li></ul>
+<ul><li>Need to understand functions in javascript better</li></ul>
+<ul><li>Elem.style.top vs elem.style.bottom</li></ul>
+<li>Clearinterval vs. setinterval</li>
+<li>From top floor to second floor, stuck in loop</li>
+<li>Else, everything else works except when a button is spammed.</li></ul>
 
 
 <?php
