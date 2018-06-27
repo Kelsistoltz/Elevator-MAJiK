@@ -5,7 +5,7 @@
 		$file_size = $_FILES['file']['size'];
 		$file_temp_Loc = $_FILES['file']['tmp_name'];
 		$file_store = "uploadJ/".$file_name;
-		
+
 		if(move_uploaded_file($file_temp_Loc, $file_store)){
 			echo "Files are uploaded";
 		}
@@ -15,8 +15,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		
-		<meta name="viewport" content="width=device-idth, initial-scale=1.0" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link href="../css/homesty.css" type="text/css" rel="stylesheet" />
 
 		<title>Josh's Log Book</title>
@@ -24,11 +24,11 @@
 	<body>
 		<div id="mySidenav" class="sidenav">
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-			<a href="../main_html/home.html">Home</a>
+			<a href="../main_html/index.html">Home</a>
 			<a href="../logbook/mike.php">Mike Luong's Logs</a>
 			<a href="../logbook/aaron.php">Aaron's Logs</a>
 			<a href="../logbook/josh.php">Josh's Logs</a>
-			<a href="../logbook/kelsy.php">Kelsi's Logs</a>				
+			<a href="../logbook/kelsy.php">Kelsi's Logs</a>
 			<a href="../main_html/about.html">About Us and the Project</a>
 			<a href="../main_html/plan.html">Project Plan</a>
 			<a href="../main_html/login.html">Login</a>
@@ -73,7 +73,7 @@
      //$dl_pic = file_get_contents($url);
      //$dl_pic = Desktop/something.jpg;
      //echo"<img src='$dl_pic'/>";
-     
+
      if (file_put_contents($complete_save_loc, file_get_contents($url))!= 0){
      	echo"Success";
      }else{
@@ -123,7 +123,7 @@
     			document.getElementById("mySidenav").style.width = "0";
     			document.getElementById("main").style.marginLeft= "0";
 			}
-		</script>	
+		</script>
 	</body>
 </html>
 
