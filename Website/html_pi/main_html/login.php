@@ -58,7 +58,24 @@
 				</div>
 
 			</div>
-
+			<?php
+// TO DISPLAY AVAILABLE USERNAMES
+session_start();
+$db = new PDO(
+	'mysql:host=127.0.0.1;dbname=test',
+	'root',
+	''
+	);
+	echo "<p><b>Available LogBook Users<b></p>";
+	echo "<br />";
+	$rows = $db->query('SELECT username FROM authusers ORDER BY nodeID');
+	foreach ($rows as $row){
+	for($i=0; $i < sizeof($row)/2; $i++){
+		echo "  " . $row[$i] ;
+	}
+	echo "<br />";
+	}
+?>
 		</form>
 		<script src="../js/inputEvent.js"></script>
 		<script src="../js/project.js"></script>
