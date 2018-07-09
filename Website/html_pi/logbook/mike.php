@@ -39,13 +39,13 @@
 				<p><input type = "file" name = "file"/> </p>
 				<p><input type = "submit" name = "upload" value = "Upload Image"></p>
 			</form>
-			<p>Log Document for Project VI - Group MAJiK</p>
-<p>Michael Luong</p>
-<p>May 7, 2018</p>
+			<p><strong>Log Document for Project VI - Group MAJiK</strong></p>
+<p><strong>Michael Luong</strong></p>
+<p><strong>May 7, 2018</strong></p>
 
 <p>Table of Contents</p>
 <p></p>
-<p><strong>Week of May 7, 2018</strong><strong>	</strong><strong>1</strong></p><p><strong>Week of May 14, 2018</strong><strong>	</strong><strong>3</strong></p><p><strong>Week of May 21, 2018</strong><strong>	</strong><strong>3</strong></p><p><strong>Week of May 28, 2018</strong><strong>	</strong><strong>4</strong></p><p><strong>Week of June 4, 2018</strong><strong>	</strong><strong>5</strong></p><p><strong>Week of June 11, 2018</strong><strong>	</strong><strong>6</strong></p>
+<p><strong>Week of May 7, 2018</strong><strong>	</strong><strong>1</strong></p><p><strong>Week of May 14, 2018</strong><strong>	</strong><strong>3</strong></p><p><strong>Week of May 21, 2018</strong><strong>	</strong><strong>3</strong></p><p><strong>Week of May 28, 2018</strong><strong>	</strong><strong>4</strong></p><p><strong>Week of June 4, 2018</strong><strong>	</strong><strong>6</strong></p><p><strong>Week of June 11, 2018</strong><strong>	</strong><strong>6</strong></p><p><strong>Week of June 18, 2018</strong><strong>	</strong><strong>7</strong></p><p><strong>Week of June 25, 2018</strong><strong>	</strong><strong>7</strong></p><p><strong>Week of July 2, 2018</strong><strong>	</strong><strong>8</strong></p>
 
 <h1>Week of May 7, 2018</h1>
 <p><strong>Monday, May 7, 2018</strong></p>
@@ -225,6 +225,33 @@
 <li>Clearinterval vs. setinterval</li>
 <li>From top floor to second floor, stuck in loop</li>
 <li>Else, everything else works except when a button is spammed.</li></ul>
+
+
+<h1>Week of June 25, 2018</h1>
+<p><strong>Tuesday, June 26, 2018</strong></p>
+<ul><li>Changed set values in php.ini file to allow a larger file size cap</li></ul>
+<ul><li>Have not tested to see if it works yet</li></ul></ul>
+
+<p><strong>Wednesday, June 27, 2018</strong></p>
+<li>Installed XAMPP and mySQL on Ubuntu machine next to mine (machine 10)</li>
+<li>None of the default passwords are working to get into mySQL databases.</li>
+<ul><li>ese, mysql, admin, root</li></ul>
+<li>Whelp, this doesn’t work.</li>
+<li>Downloaded an older version of Connector C++</li>
+<li>Test code from Mike Galle now works… partially.</li>
+<li>Breaks when reading database name</li></ul>
+
+
+<h1>Week of July 2, 2018</h1>
+<p><strong>Wednesday, July 4, 2018</strong></p>
+<ul><li>Tried linking the libraries to a newer version of Visual Studio’s (2017)</li></ul>
+<ul><li>Libraries to old. Does not accept</li></ul>
+<li>According to forums and help pages, connector libraries currently work for VS2015 which lab computers don’t have</li></ul>
+
+<p><strong>Friday, July 6, 2018</strong></p>
+<ul><li>Mike Galle suggests to copy an image of the PI to VMWare</li></ul>
+<ul><li>https://www.raspberrypi.org/documentation/installation/installing-images/README.md</li></ul>
+<li><u>https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/msd.md</u> </li></ul>
 
 
 <?php

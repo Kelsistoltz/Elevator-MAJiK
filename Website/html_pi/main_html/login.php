@@ -24,7 +24,7 @@
 	<body>
 		<div id="mySidenav" class="sidenav">
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-			<a href="index.html">Home</a>
+			<a href="home.html">Home</a>
 			<a href="../logbook/mike.php">Mike Luong's Logs</a>
 			<a href="../logbook/aaron.php">Aaron's Logs</a>
 			<a href="../logbook/josh.php">Josh's Logs</a>
@@ -53,14 +53,29 @@
 				</div>
 
 				<div>
-					<a class="button" href="request_access.html">Request Access</a>
-				</div>
-				<div>
 					<input id="submit" class="form_but" type="submit" value="Log In" onlcick="alert('Access Requested')"/>
+          <a class="button" href="request_access.html">Request Access</a>
 				</div>
 
 			</div>
-
+			<?php
+// TO DISPLAY AVAILABLE USERNAMES
+session_start();
+$db = new PDO(
+	'mysql:host=127.0.0.1;dbname=test',
+	'root',
+	''
+	);
+	echo "<p><b>Available LogBook Users<b></p>";
+	echo "<br />";
+	$rows = $db->query('SELECT username FROM authusers ORDER BY nodeID');
+	foreach ($rows as $row){
+	for($i=0; $i < sizeof($row)/2; $i++){
+		echo "  " . $row[$i] ;
+	}
+	echo "<br />";
+	}
+?>
 		</form>
 		<script src="../js/inputEvent.js"></script>
 		<script src="../js/project.js"></script>
