@@ -24,7 +24,7 @@ $submitted = !empty($_POST);
 			<li>Email: <?php echo $_POST['email']; ?> </li>
 			<li>Username: <?php echo $_POST['uname']; ?></li>
 			<li>Password: <?php echo $_POST['password']; ?></li>
-			</ul> 
+			</ul>
 	</body>
 </html>
 
@@ -39,14 +39,14 @@ session_start();
 		'root',
 		''
 	);
-	
-	$username = $_POST['uname'];	
+
+	$username = $_POST['uname'];
 	$password = $_POST['password'];
 	$email = $_POST['email'];
-	
+
 	$newUser = new AuthUser($username, $password);		// make object when Signup is called.
 	$newUser->addUser($username, $password, $email);	// add the new user to database, called from AuthUser.php
-	
+
 	echo "<p>You have successfully registered</p>";
-	echo "<p>Click <a href=../login.html> HERE </a> to go back to login page.</p>";
-?>	
+	echo "<p>Click <a href=../main_html/login.html> HERE </a> to go back to login page.</p>";
+?>
