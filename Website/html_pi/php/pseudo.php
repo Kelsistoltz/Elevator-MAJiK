@@ -12,24 +12,6 @@ div.absolute {
   width: 100px;
   height: 50px;
   position: absolute;
-  background-color: red;
-  margin-left: 35%
-  
-}
-
-<!DOCTYPE html>
-<html>
-<style>
-#container {
-  width: 400px;
-  height: 400px;
-  position: relative;
-  background: cyan;
-}
-div.absolute {
-  width: 100px;
-  height: 50px;
-  position: absolute;
   background-color: white;
   margin-left: 35%	/* to push the animation box over 35% of the container */
   
@@ -41,6 +23,10 @@ button {
 }
 
 </style>
+<!DOCTYPE html>
+<html>
+
+
 <body>
 <div id ="container">
 <div id ="animate" class="absolute">Testing</div>
@@ -77,24 +63,27 @@ function floor3() {
 }
 
 function floor2(){
-  var id = setInterval(frame, 5);
-  function frame() {
-    if (pos == secondFloor) {
-      document.getElementById("myText").innerHTML = "SECOND FLOOR"
-      clearInterval(id);
-    } else if(pos == thirdFloor) {
-      pos++; 
-      //elem.style.bottom = pos + 'px';
-      elem.style.top = pos + 'px';  
-      document.getElementById("myText").innerHTML = "stuck?";
-	  //clearInterval(id);
-    }else{
-      pos--; 
-      elem.style.top = pos + 'px';  
-      //elem.style.bottom = pos + 'px';
-      document.getElementById("myText").innerHTML = pos;
-    }
-  } 
+	var id = setInterval(frame, 5);
+	function frame() {
+		if (pos == secondFloor) {
+		  document.getElementById("myText").innerHTML = "SECOND FLOOR"
+		  clearInterval(id);
+		} else if(pos != bottomFloor) {
+		  pos++; 
+		  //elem.style.bottom = pos + 'px';
+		  elem.style.top = pos + 'px';  
+		  document.getElementById("myText").innerHTML = "stuck?";
+		  //clearInterval(id);
+		}else if(pos != thirdFloor){
+			//while (pos != secondFloor){
+				pos--; 
+				elem.style.top = pos + 'px';  
+				elem.style.bottom = pos + 'px';
+				document.getElementById("myText").innerHTML = pos;
+				clearInterval(id);
+			//}
+		}
+	} 
 }
 
 function floor1() {
