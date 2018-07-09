@@ -64,6 +64,21 @@
 				Added Java Script functionality to the request access page to make it so the user can only submit
 				the page once they fill in the appropriate fields. It give an error message when you do not.
 				</p>
+				<h2 class="weeklog" >Week 8</h2>
+				<p>
+				I dont remember.
+				</p>
+				<h2 class="weeklog" >Week 9</h2>
+				<p>
+				Tons of studying for exams
+				</p>
+				<h2 class="weeklog" >Week 10</h2>
+				<p>
+				This week has been a slow week. After all of the studying, there was not a huge amount accomplished. Mike and Josh perfected the databases so that we can access them on multiple
+				different devices so that all the information can be viewed from different places. I went through the data base lectures, and now understand what is happening. My job for today
+				and the next week is to start on the C++ bridge in order to retrieve info from the CAN nertwork and add it to the data base. I started on that today, and will work on it this week
+				and next. 
+				</p>
 			</ul>
 			<form action = "?" method ="POST" enctype = "multipart/form-data">
 				<p><input type = "file" name = "file"/> </p>
