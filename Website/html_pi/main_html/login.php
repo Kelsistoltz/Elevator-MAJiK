@@ -62,9 +62,9 @@
 // TO DISPLAY AVAILABLE USERNAMES
 session_start();
 $db = new PDO(
-	'mysql:host=127.0.0.1;dbname=test',
-	'root',
-	''
+	'mysql:host=142.156.193.61;dbname=test',
+	'Mike',
+	'MAJiK'
 	);
 	echo "<p><b>Available LogBook Users<b></p>";
 	echo "<br />";
