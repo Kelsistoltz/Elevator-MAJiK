@@ -4,16 +4,17 @@ var firstNameFeedback, lastNameFeedback, feedback, feedbackk;    // Get feedback
 var firstNameInput, lastNameInput, elUsername, elPassword;  	  	   // Get input elements
 
 elForm = document.getElementById('reqAccess');
-firstNameFeedback = document.getElementById('firstNameFeedback'); 
-lastNameFeedback = document.getElementById('lastNameFeedback'); 
+firstNameFeedback = document.getElementById('firstNameFeedback');
+lastNameFeedback = document.getElementById('lastNameFeedback');
 elMsg = document.getElementById('feedback');
 elMsg1 = document.getElementById('feedbackk');
 
-firstNameInput = document.getElementById('fname'); 
-lastNameInput = document.getElementById('lname'); 
+firstNameInput = document.getElementById('fname');
+lastNameInput = document.getElementById('lname');
 elUsername = document.getElementById('username');
 elPassword = document.getElementById('pass');
-
+elTextArea = document.getElementById('textarea');
+elTextAreaAlert = document.getElementById('textarea_alert');
 
 function checkFirstName(event) {
 	if (firstNameInput.value.length < 1) {
@@ -50,5 +51,15 @@ function checkPassword(event){
 	}
 }
 
-// Create event listeners 
-elForm.addEventListener('submit', function(event) {checkFirstName(event); checkLastName(event); checkUsername(event); checkPassword(event);}, false); 
+function checkTextArea(event){
+	if(elTextArea.value.length > 180){
+		elTextAreaAlert.innerHTML = 'Character limit exceeded! Maximum of 180 characters allowed';
+		event.preventDefault();
+	} else{
+		elTextAreaAlert.innerHTML = '';
+	}
+}
+
+// Create event listeners
+elForm.addEventListener('submit', function(event) {checkFirstName(event); checkLastName(event); checkUsername(event); checkPassword(event);}, false);
+elTextArea.addEventListener('keypress', function(event) {checkTextArea(event);}, false);
