@@ -177,6 +177,7 @@ function floor1() {
 
 
 	</script>
+		<p>Click <a href="logout.php"> here </a> to be logged out.
 	</body>
 </html>
 
