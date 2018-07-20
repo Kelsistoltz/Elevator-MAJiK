@@ -1,8 +1,9 @@
 <?php
+$uname = $_SESSION['username'];
 class AuthUser extends GuestUser{
 	
 	public function printUserInfo(){
-		$db = new PDO('mysql:host=142.156.193.61;dbname=test', 'Mike', 'MAJiK');
+		$db = new PDO('mysql:host=142.156.193.61;dbname=test', $uname, 'MAJiK');
 		
 		$rows = $db->query('SELECT * FROM authusers ORDER by nodeID = 2');
 		foreach ($rows as $row){
@@ -14,7 +15,7 @@ class AuthUser extends GuestUser{
 	
 	public function editUserPass(string $password){
 		$id = $_SESSION['nodeID'];
-		$db = new PDO('mysql:host=142.156.193.61;dbname=test', 'Mike', 'MAJiK');
+		$db = new PDO('mysql:host=142.156.193.61;dbname=test', $uname, 'MAJiK');
 		$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 		$query = 'UPDATE authusers SET password = "' .$password. '" WHERE nodeID = "' .$id. '"';
 		$statement = $db->prepare($query);
@@ -29,7 +30,7 @@ class AuthUser extends GuestUser{
 	}
 	public function editUserEmail(string $email){
 		$id = $_SESSION['nodeID'];
-		$db = new PDO('mysql:host=142.156.193.61;dbname=test', 'Mike', 'MAJiK');
+		$db = new PDO('mysql:host=142.156.193.61;dbname=test', $uname, 'MAJiK');
 		$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 		$query = 'UPDATE authusers SET email = "' .$email. '" WHERE nodeID = "' .$id. '"';
 		$statement = $db->prepare($query);
@@ -45,7 +46,7 @@ class AuthUser extends GuestUser{
 	
 	public function editLogInfo(string $log){
 		$id = $_SESSION['nodeID'];		
-		$db = new PDO('mysql:host=142.156.193.61;dbname=test', 'Mike', 'MAJiK');
+		$db = new PDO('mysql:host=142.156.193.61;dbname=test', $uname, 'MAJiK');
 		$query = 'INSERT INTO log(nodeID, date, time, log) VALUES ("' .$id. '", NOW(), CURRENT_TIME(), :log)';
 		//echo $log;
 		$statement = $db->prepare($query);
@@ -58,7 +59,7 @@ class AuthUser extends GuestUser{
 	}
 	
 	public function addUser(string $username, string $password, string $email){
-		$db = new PDO('mysql:host=142.156.193.61;dbname=test', 'Mike', 'MAJiK');
+		$db = new PDO('mysql:host=142.156.193.61;dbname=test', $uname, 'MAJiK');
 		$query = 'INSERT INTO authusers(username, password, email) VALUES (:username, :password, :email)';
 		$statement = $db->prepare($query);
 		

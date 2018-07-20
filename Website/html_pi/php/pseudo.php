@@ -1,12 +1,15 @@
 <?php
 session_start();
-$db = new PDO('mysql:host=142.156.193.61;dbname=test', 'Mike', 'MAJiK');
-	// SELECT current floor to display.
-/* 	$rows = $db->query('SELECT * FROM data ORDER by nodeID = 2');
-	foreach ($rows as $row){
-		for($i=0; $i<sizeof($row)/2; $i++){
-			echo " | " . $row[$i]. "<br>";
+$username = $_SESSION['username'];
+$db = new PDO('mysql:host=142.156.193.61;dbname=test', $username, 'MAJiK');
+	
+	//$rows = $db->query('SELECT DateandTime FROM data ORDER BY DateandTime ASC');
+	//echo $rows;
+/* 	foreach ($rows as $row){
+		for($i=0; $i < sizeof($row)/2; $i++){
+			echo " | " . $row[$i] ;
 		}
+		echo "<br />";
 	} */
 ?>
 <!DOCTYPE html>
@@ -51,7 +54,6 @@ button {
 				<button id="dsButton1" name="btnfun2" onclick="floor2() ">Floor 2</button>
 				<button id="dsButton2" onclick="floor1()">Floor 1</button>
 
-				<button id="STOP" name="btnfun2" onclick="mStop() ">EMERGENCY STOP</button>
 				</p> 
 		</div>
 		<h1 id='floor'></h1>  
@@ -96,7 +98,6 @@ function floor3() {
 		} else {
 		  pos--; 
 		  elem.style.top = pos + 'px'; 
-		  //elem.style.bottom = pos + 'px'; 
 		  dsButton();
 		  
 		}
@@ -133,7 +134,6 @@ function floor2(){
 		    enButton();
 		} else if(pos != bottomFloor) {
 		    pos++; 
-		    //elem.style.bottom = pos + 'px';
 		    elem.style.top = pos + 'px';  
 		    //document.getElementById("myText").innerHTML = "stuck?";
 		    dsButton();
@@ -177,7 +177,7 @@ function floor1() {
 
 
 	</script>
-		<p>Click <a href="logout.php"> here </a> to be logged out.
+		<p>Click <a href="logout.php"> here </a> to be logged out.</p>
 	</body>
 </html>
 
