@@ -35,9 +35,9 @@ require_once __DIR__ . '/AuthUser.php';
 
 session_start();
 	$db = new PDO(
-		'mysql:host=127.0.0.1;dbname=test',
-		'root',
-		''
+		'mysql:host=142.156.193.61;dbname=test',
+		'Mike',
+		'MAJiK'
 	);
 
 	$username = $_POST['uname'];
@@ -48,5 +48,7 @@ session_start();
 	$newUser->addUser($username, $password, $email);	// add the new user to database, called from AuthUser.php
 
 	echo "<p>You have successfully registered</p>";
-	echo "<p>Click <a href=../main_html/login.html> HERE </a> to go back to login page.</p>";
-?>
+	echo "<p>Click <a href=../main_html/login.php> HERE </a> to go back to login page.</p>";
+?>	
+
+
