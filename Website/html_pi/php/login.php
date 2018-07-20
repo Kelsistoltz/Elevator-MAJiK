@@ -32,7 +32,7 @@ $submitted = !empty($_POST);
 	
 	if($username && $password){
 		// enter in as authenticated user
-		$db = new PDO('mysql:host=127.0.0.1;dbname=test', 'root', '');
+		$db = new PDO('mysql:host=142.156.193.61;dbname=test', $username, 'MAJiK');
 		//echo "<p>does it skip this?</p>";
 		
 		$authenticated = FALSE;
@@ -53,11 +53,11 @@ $submitted = !empty($_POST);
 			echo "<p>Please click <a href=\"pseudo.php\">here</a> to be taken to our member only page</p>";
 		} else{
 			echo "<p>You are not authenticated</p>";
-			echo "<p>Please check your username and password and click <a href='../index.php'>here</a> to log in again";	// REDIRECT BACK TO LOGIN PAGE
+			echo "<p>Please check your username and password and click <a href='../main_html/login.php'>here</a> to log in again";	// REDIRECT BACK TO LOGIN PAGE
 		}
 		
 	} else if ($password == NULL){	// should add another if for null pass AND wrong username
-		$db = new PDO('mysql:host=127.0.0.1;dbname=test', 'root', '');
+		$db = new PDO('mysql:host=142.156.193.61;dbname=test', $username, 'MAJiK');
 		// enter in as guest
 		$rows = $db->query('SELECT * FROM authusers ORDER BY nodeID');
 		foreach($rows as $row){
@@ -75,7 +75,7 @@ $submitted = !empty($_POST);
 			echo "<p>Please click <a href=\"guest.php\">here</a> to be taken to our guest only page</p>";
 		} else{
 			echo "<p>You are not authenticated</p>";
-			echo "<p>Please check your username and password and click <a href='../index.php'>here</a> to log in again";	// REDIRECT BACK TO LOGIN PAGE
+			echo "<p>Please check your username and password and click <a href='../main_html/login.php'>here</a> to log in again";	// REDIRECT BACK TO LOGIN PAGE
 		}
 	}
 	else{

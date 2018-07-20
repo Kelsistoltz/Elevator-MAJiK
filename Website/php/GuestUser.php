@@ -13,7 +13,7 @@ class GuestUser{
 	
 	//Lecture 10 PHP oop 1
 	public function dispUsername(){	// gets username to display??? 
-		$db = new PDO('mysql:host=127.0.0.1;dbname=test','root','');
+		$db = new PDO('mysql:host=142.156.193.61;dbname=test',$username,'MAJiK');
 		$id = $_SESSION['nodeID'];
 		$username = $_SESSION['username'];
 		$password = $_SESSION['password'];
@@ -28,7 +28,7 @@ class GuestUser{
 	}
 	
 	public function dispUserID(){	// gets username to display??? 
-		$db = new PDO('mysql:host=127.0.0.1;dbname=test','root','');
+		$db = new PDO('mysql:host=142.156.193.61;dbname=test',$username,'MAJiK');
 		$id = $_SESSION['nodeID'];
 		$username = $_SESSION['username'];
 		$password = $_SESSION['password'];
@@ -43,7 +43,7 @@ class GuestUser{
 	}
 	
 	public function dispPassword(){	// gets username to display??? 
-		$db = new PDO('mysql:host=127.0.0.1;dbname=test','root','');
+		$db = new PDO('mysql:host=142.156.193.61;dbname=test',$username,'MAJiK');
 		$id = $_SESSION['nodeID'];
 		$username = $_SESSION['username'];
 		$password = $_SESSION['password'];
@@ -58,7 +58,7 @@ class GuestUser{
 	}
 	
 	public function dispEmail(){	// gets email to display please?
-		$db = new PDO('mysql:host=127.0.0.1;dbname=test','root','');
+		$db = new PDO('mysql:host=142.156.193.61;dbname=test',$username,'MAJiK');
 		$id = $_SESSION['nodeID'];
 		$rows = $db->query('SELECT email FROM authusers WHERE nodeID = "' .$id. '"');
 		foreach ($rows as $row){
@@ -70,7 +70,7 @@ class GuestUser{
 	}
 	
 	public function dispLog(){		// yes
-		$db = new PDO('mysql:host=127.0.0.1;dbname=test','root','');
+		$db = new PDO('mysql:host=142.156.193.61;dbname=test',$username,'MAJiK');
 		$id = $_SESSION['nodeID'];
 		$rows = $db->query('SELECT DISTINCT nodeID = "' .$id. '", date, time, log FROM log WHERE nodeID = "' .$id. '"');
 		foreach ($rows as $row){

@@ -33,10 +33,10 @@ $submitted = !empty($_POST);
 require_once __DIR__ . '/GuestUser.php';
 require_once __DIR__ . '/AuthUser.php';
 
-session_start();
-	$db = new PDO(
+	session_start();
+		$db = new PDO(
 		'mysql:host=142.156.193.61;dbname=test',
-		'Mike',
+		$username = $_POST['uname'],
 		'MAJiK'
 	);
 
