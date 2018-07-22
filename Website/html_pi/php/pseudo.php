@@ -57,10 +57,12 @@ button {
 		<div id ="container">
 			<div id ="animate" class="absolute"></div>
 				<p>
-					<button id="dsButton" name="btnfun1" onclick="floor3()">Floor 3</button>
-					<button id="dsButton1" name="btnfun2" onclick="floor2() ">Floor 2</button>
-					<button id="dsButton2" onclick="floor1()">Floor 1</button>
-				</p>
+				<button id="dsButton" name="btnfun1" onclick="floor3()">Floor 3</button>
+				<button id="dsButton1" name="btnfun2" onclick="floor2() ">Floor 2</button>
+				<button id="dsButton2" onclick="floor1()">Floor 1</button>
+				<button id="dsStop" onclick="mStop()">STAHP</button>
+				</p> 
+
 		</div>
 		<h1 id='floor'></h1>
 			<textarea id="event_logging_textarea" readonly></textarea>
@@ -114,13 +116,13 @@ function floor3() {
     function frame() {
 		if (pos == thirdFloor) {
 		  //document.getElementById("myText").innerHTML = "THIRD FLOOR"
-		  clearInterval(id);
-		  enButton();
+		    clearInterval(id);
+		    enButton();
 		} else {
-		  pos--;
-		  elem.style.top = pos + 'px';
-		  dsButton();
-
+		    pos--; 
+		    elem.style.top = pos + 'px'; 
+		    dsButton();
+		  
 		}
     }
 }
@@ -183,16 +185,17 @@ function floor1() {
     xmlhttpShow.send();
     var id = setInterval(frame, 5);
     function frame() {
-			if (pos == bottomFloor) {
-			  //document.getElementById("myText").innerHTML = "FIRST FLOOR"
-			  clearInterval(id);
-			  enButton();
-			} else {
-			  pos++;
-			  elem.style.top = pos + 'px';
-			  elem.style.bottom = pos + 'px';
-			  dsButton();
-			}
+		if (pos == bottomFloor) {
+		  //document.getElementById("myText").innerHTML = "FIRST FLOOR"
+		    clearInterval(id);
+		    enButton();
+		} else {
+		    pos++; 
+		    elem.style.top = pos + 'px'; 
+		    elem.style.bottom = pos + 'px'; 
+		    dsButton();
+		}
+
     }
 }
 	</script>
