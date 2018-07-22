@@ -51,8 +51,10 @@ $submitted = !empty($_POST);
 
 		if($authenticated == TRUE){
 			$_SESSION['username']=$username;	// Store a session variable
+			$id = $_SESSION['nodeID'];
 			echo "<p>Congratulations, you are now logged into the site. <p>";
 			echo "<p>Please click <a href=\"pseudo.php\">here</a> to be taken to our member only page</p>";
+			$query = 'INSERT INTO log(nodeID,log,Dateandtime) VALUES ("'.$id.'","Successful Login!",CURRENT_TIMESTAMP())';
 		} else{
 			echo "<p>You are not authenticated</p>";
 			echo "<p>Please check your username and password and click <a href='../main_html/login.php'>here</a> to log in again";	// REDIRECT BACK TO LOGIN PAGE
