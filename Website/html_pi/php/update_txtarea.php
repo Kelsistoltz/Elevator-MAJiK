@@ -15,5 +15,8 @@
   $statement->bindParam(':lastlog', $lastlog);
   $statement->execute();
   $result = $statement->fetchAll();
-  print_r($result);
+
+  foreach ($result as $log){
+    echo "[".$log['DateandTime']."] Username: ".$log['user']."(".$log['nodeID'].")\n\t".$log['log']."\n";
+  }
 ?>
