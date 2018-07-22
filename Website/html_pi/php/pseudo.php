@@ -29,6 +29,11 @@ $db = new PDO('mysql:host=142.156.193.61;dbname=test', $username, 'MAJiK');
 #animate{
 
 }
+#event_logging_textarea{
+	width: 600px;
+	height: 400px;
+	resize: none;
+}
 div.absolute {
   width: 100px;
   height: 50px;
@@ -48,27 +53,39 @@ button {
 </style>
 <!DOCTYPE html>
 <html>
-
-
 	<body>
 		<div id ="container">
 			<div id ="animate" class="absolute"></div>
 				<p>
-				<button id="dsButton" name="btnfun1" onclick="floor3()">Floor 3</button>
-				<button id="dsButton1" name="btnfun2" onclick="floor2() ">Floor 2</button>
-				<button id="dsButton2" onclick="floor1()">Floor 1</button>
-
+					<button id="dsButton" name="btnfun1" onclick="floor3()">Floor 3</button>
+					<button id="dsButton1" name="btnfun2" onclick="floor2() ">Floor 2</button>
+					<button id="dsButton2" onclick="floor1()">Floor 1</button>
 				</p>
 		</div>
 		<h1 id='floor'></h1>
-
+			<textarea id="event_logging_textarea" readonly></textarea>
+			<p>Click <a href="logout.php"> here </a> to be logged out.</p>
 	<script>
 var pos = 0;	// change to variable fetched from database table
 var bottomFloor = 350;
 var secondFloor = 175;
 var thirdFloor = 0;
 var elem = document.getElementById("animate");
+var txtarea = document.getElementById("event_logging_textarea");
 
+window.setInterval(update_txtarea, 1000);
+/* call a php script to read the sql log table and update the textarea*/
+function update_txtarea(){
+	var xmlhttpShow = new XMLHttpRequest;
+	xmlhttpShow.onreadystatechange = function(){
+		if (this.responseText != ''){
+			txtarea.value = ("\n" + this.responseText);
+			txtarea.scrollTop = txtarea.scrollHeight;
+		}
+	}
+	xmlhttpShow.open("GET","../php/update_txtarea.php", true);
+	xmlhttpShow.send();
+}
 /* Disable and Enable Buttons for the purpose of getting rid of double-clicks */
 function dsButton(){
 	document.getElementById("dsButton").disabled = true;
@@ -166,21 +183,18 @@ function floor1() {
     xmlhttpShow.send();
     var id = setInterval(frame, 5);
     function frame() {
-		if (pos == bottomFloor) {
-		  //document.getElementById("myText").innerHTML = "FIRST FLOOR"
-		  clearInterval(id);
-		  enButton();
-		} else {
-		  pos++;
-		  elem.style.top = pos + 'px';
-		  elem.style.bottom = pos + 'px';
-		  dsButton();
-		}
+			if (pos == bottomFloor) {
+			  //document.getElementById("myText").innerHTML = "FIRST FLOOR"
+			  clearInterval(id);
+			  enButton();
+			} else {
+			  pos++;
+			  elem.style.top = pos + 'px';
+			  elem.style.bottom = pos + 'px';
+			  dsButton();
+			}
     }
 }
-
-
 	</script>
-		<p>Click <a href="logout.php"> here </a> to be logged out.</p>
 	</body>
 </html>
