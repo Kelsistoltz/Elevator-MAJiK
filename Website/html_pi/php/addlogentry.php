@@ -8,7 +8,6 @@
   $username = $_SESSION['username'];
   $nodeID = $_SESSION['nodeID'];
 
-
   $db = new PDO('mysql:host=142.156.193.61;dbname=test', $username, 'MAJiK');
 
   $statement = $db->prepare('INSERT INTO `log` VALUES(:nodeID, "Logging Message!", CURRENT_TIMESTAMP(), :username)');
