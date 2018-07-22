@@ -1,8 +1,12 @@
 <?php
 session_start();
+if (empty($_SESSION)){
+	echo "You must <a href='../main_html/login.html'>log in</a> to access this page";
+	exit();
+}
 $username = $_SESSION['username'];
 $db = new PDO('mysql:host=142.156.193.61;dbname=test', $username, 'MAJiK');
-	
+
 	//$rows = $db->query('SELECT DateandTime FROM data ORDER BY DateandTime ASC');
 	//echo $rows;
 /* 	foreach ($rows as $row){
@@ -23,7 +27,7 @@ $db = new PDO('mysql:host=142.156.193.61;dbname=test', $username, 'MAJiK');
   background-size: 100%;
 }
 #animate{
-	
+
 }
 div.absolute {
   width: 100px;
@@ -33,7 +37,7 @@ div.absolute {
   background:url(../images/elevator.jpg);
   background-size: 50%;
   margin-left: 35%	/* to push the animation box over 35% of the container */
-  
+
 }
 button {
 	padding: 10px;
@@ -54,9 +58,9 @@ button {
 				<button id="dsButton1" name="btnfun2" onclick="floor2() ">Floor 2</button>
 				<button id="dsButton2" onclick="floor1()">Floor 1</button>
 
-				</p> 
+				</p>
 		</div>
-		<h1 id='floor'></h1>  
+		<h1 id='floor'></h1>
 
 	<script>
 var pos = 0;	// change to variable fetched from database table
@@ -88,7 +92,7 @@ function floor3() {
     };
 	xmlhttpShow.open("GET", "../php/elevatorFloor3.php", true);
 	xmlhttpShow.send();
-   
+
     var id = setInterval(frame, 5);
     function frame() {
 		if (pos == thirdFloor) {
@@ -96,10 +100,10 @@ function floor3() {
 		  clearInterval(id);
 		  enButton();
 		} else {
-		  pos--; 
-		  elem.style.top = pos + 'px'; 
+		  pos--;
+		  elem.style.top = pos + 'px';
 		  dsButton();
-		  
+
 		}
     }
 }
@@ -133,21 +137,21 @@ function floor2(){
 		    clearInterval(id);
 		    enButton();
 		} else if(pos != bottomFloor) {
-		    pos++; 
-		    elem.style.top = pos + 'px';  
+		    pos++;
+		    elem.style.top = pos + 'px';
 		    //document.getElementById("myText").innerHTML = "stuck?";
 		    dsButton();
-		  
+
 		}else if(pos != thirdFloor){
 			while (pos != secondFloor){
-				pos--; 
-				elem.style.top = pos + 'px';  
+				pos--;
+				elem.style.top = pos + 'px';
 				elem.style.bottom = pos + 'px';
 				//document.getElementById("myText").innerHTML = pos;
 				dsButton();
 			}
 		}
-	} 
+	}
 }
 
 function floor1() {
@@ -167,9 +171,9 @@ function floor1() {
 		  clearInterval(id);
 		  enButton();
 		} else {
-		  pos++; 
-		  elem.style.top = pos + 'px'; 
-		  elem.style.bottom = pos + 'px'; 
+		  pos++;
+		  elem.style.top = pos + 'px';
+		  elem.style.bottom = pos + 'px';
 		  dsButton();
 		}
     }
@@ -180,5 +184,3 @@ function floor1() {
 		<p>Click <a href="logout.php"> here </a> to be logged out.</p>
 	</body>
 </html>
-
-
