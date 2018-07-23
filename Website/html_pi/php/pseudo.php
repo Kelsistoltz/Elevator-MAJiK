@@ -60,13 +60,13 @@ button {
 				<button id="dsButton" name="btnfun1" onclick="floor3()">Floor 3</button>
 				<button id="dsButton1" name="btnfun2" onclick="floor2() ">Floor 2</button>
 				<button id="dsButton2" onclick="floor1()">Floor 1</button>
-				<button id="dsStop" onclick="mStop()">STAHP</button>
-				</p> 
-
+				<button id="dsStop" onclick="mStop()">Emergency Stop</button>
+				</p>
 		</div>
 		<h1 id='floor'></h1>
-			<textarea id="event_logging_textarea" readonly></textarea>
-			<p>Click <a href="logout.php"> here </a> to be logged out.</p>
+		<p><b>Logs:</b></p>
+		<textarea id="event_logging_textarea" readonly></textarea>
+		<p>Click <a href="logout.php"> here </a> to be logged out.</p>
 	<script>
 var pos = 0;	// change to variable fetched from database table
 var bottomFloor = 350;
@@ -104,10 +104,10 @@ function enButton(){
 function floor3() {
  	var xmlhttpShow = new XMLHttpRequest();
     xmlhttpShow.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200) {
-			var resp = this.responseText;   // Text string returned from server in 'echo' statement
-			document.getElementById('floor').innerHTML = resp;
-		}
+			if(this.readyState == 4 && this.status == 200) {
+				var resp = this.responseText;   // Text string returned from server in 'echo' statement
+				document.getElementById('floor').innerHTML = resp;
+			}
     };
 	xmlhttpShow.open("GET", "../php/elevatorFloor3.php", true);
 	xmlhttpShow.send();
@@ -119,25 +119,18 @@ function floor3() {
 		    clearInterval(id);
 		    enButton();
 		} else {
-		    pos--; 
-		    elem.style.top = pos + 'px'; 
+		    pos--;
+		    elem.style.top = pos + 'px';
 		    dsButton();
-		  
 		}
     }
 }
 
-/* function mStop(){
+function mStop(){
 	var xmlhttpShow = new XMLHttpRequest();
-    xmlhttpShow.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200) {
-			var resp = this.responseText;   // Text string returned from server in 'echo' statement
-			document.getElementById('floor').innerHTML = resp;
-		}
-    };
-    xmlhttpShow.open("GET", "../php/elevatorStop.php", true);
-    xmlhttpShow.send();
-} */
+  xmlhttpShow.open("GET", "../php/elevatorStop.php", true);
+  xmlhttpShow.send();
+}
 
 function floor2(){
 	var xmlhttpShow = new XMLHttpRequest();
@@ -190,9 +183,9 @@ function floor1() {
 		    clearInterval(id);
 		    enButton();
 		} else {
-		    pos++; 
-		    elem.style.top = pos + 'px'; 
-		    elem.style.bottom = pos + 'px'; 
+		    pos++;
+		    elem.style.top = pos + 'px';
+		    elem.style.bottom = pos + 'px';
 		    dsButton();
 		}
 
