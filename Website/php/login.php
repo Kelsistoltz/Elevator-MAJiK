@@ -53,7 +53,7 @@ $submitted = !empty($_POST);
 			echo "<p>Please click <a href=\"member.php\">here</a> to be taken to our member only page</p>";
 		} else{
 			echo "<p>You are not authenticated</p>";
-			echo "<p>Please check your username and password and click <a href='../index.php'>here</a> to log in again";	// REDIRECT BACK TO LOGIN PAGE
+			echo "<p>Please check your username and password and click <a href='../login.php'>here</a> to log in again";	// REDIRECT BACK TO LOGIN PAGE
 		}
 		
 	} else if ($password == NULL){	// should add another if for null pass AND wrong username
@@ -75,7 +75,7 @@ $submitted = !empty($_POST);
 			echo "<p>Please click <a href=\"guest.php\">here</a> to be taken to our guest only page</p>";
 		} else{
 			echo "<p>You are not authenticated</p>";
-			echo "<p>Please check your username and password and click <a href='../index.php'>here</a> to log in again";	// REDIRECT BACK TO LOGIN PAGE
+			echo "<p>Please check your username and password and click <a href='../login.php'>here</a> to log in again";	// REDIRECT BACK TO LOGIN PAGE
 		}
 	}
 	else{

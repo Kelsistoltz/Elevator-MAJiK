@@ -17,7 +17,7 @@ $submitted = !empty($_POST);
 		<ul>
 			<li>Username: <?php echo $_POST['uname']; ?></li>
 			<li>Password: <?php echo $_POST['password']; ?></li>
-			</ul> 
+			</ul>
 	</body>
 </html>
 
@@ -25,16 +25,16 @@ $submitted = !empty($_POST);
 
 //authenticate.php//
 	session_start();
+	date_default_timezone_set('America/New_York');
 	$username = $_POST['uname'];
 	$password = $_POST['password'];
 	
-	
-	
 	if($username && $password){
 		// enter in as authenticated user
-		$db = new PDO('mysql:host=127.0.0.1;dbname=test', 'root', '');
+		$db = new PDO('mysql:host=142.156.193.61;dbname=test', $username, 'MAJiK');
+		//$nodeID = $_SESSION['nodeID'];
 		//echo "<p>does it skip this?</p>";
-		
+
 		$authenticated = FALSE;
 		$rows = $db->query('SELECT * FROM authusers ORDER BY nodeID');
 		foreach($rows as $row){
@@ -43,21 +43,29 @@ $submitted = !empty($_POST);
 				$_SESSION['nodeID'] = $row[0];	// temporary variable to hold nodeID
 				$_SESSION['username'] = $row[1];
 				$_SESSION['password'] = $row[2];
+				$_SESSION['logtime'] = date("Y-m-d H:i:s");
 				// echo "<p>testing this line</p>";
 			}
 		}
-		
+
 		if($authenticated == TRUE){
 			$_SESSION['username']=$username;	// Store a session variable
+			
+			$nodeID = $_SESSION['nodeID'];
+			$statement = $db->prepare('INSERT INTO log(nodeID,log,Dateandtime,user) VALUES (:nodeID,"Successful Login!",CURRENT_TIMESTAMP(),:username)');
+			$statement->bindParam(':nodeID', $nodeID);
+			$statement->bindParam(':username', $username);
+			$statement->execute();
+			
 			echo "<p>Congratulations, you are now logged into the site. <p>";
 			echo "<p>Please click <a href=\"pseudo.php\">here</a> to be taken to our member only page</p>";
 		} else{
 			echo "<p>You are not authenticated</p>";
-			echo "<p>Please check your username and password and click <a href='../index.php'>here</a> to log in again";	// REDIRECT BACK TO LOGIN PAGE
+			echo "<p>Please check your username and password and click <a href='../main_html/login.php'>here</a> to log in again";	// REDIRECT BACK TO LOGIN PAGE
 		}
-		
+
 	} else if ($password == NULL){	// should add another if for null pass AND wrong username
-		$db = new PDO('mysql:host=127.0.0.1;dbname=test', 'root', '');
+		$db = new PDO('mysql:host=142.156.193.61;dbname=test', $username, 'MAJiK');
 		// enter in as guest
 		$rows = $db->query('SELECT * FROM authusers ORDER BY nodeID');
 		foreach($rows as $row){
@@ -75,7 +83,7 @@ $submitted = !empty($_POST);
 			echo "<p>Please click <a href=\"guest.php\">here</a> to be taken to our guest only page</p>";
 		} else{
 			echo "<p>You are not authenticated</p>";
-			echo "<p>Please check your username and password and click <a href='../index.php'>here</a> to log in again";	// REDIRECT BACK TO LOGIN PAGE
+			echo "<p>Please check your username and password and click <a href='../main_html/login.php'>here</a> to log in again";	// REDIRECT BACK TO LOGIN PAGE
 		}
 	}
 	else{
