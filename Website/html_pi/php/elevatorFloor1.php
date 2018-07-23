@@ -20,4 +20,9 @@ if (empty($_SESSION)){
 	];
 
 	$result = $statement->execute($params);
+	
+	$statement = $db->prepare('INSERT INTO log(nodeID,log,Dateandtime,user) VALUES (:nodeID,"Requesting Floor 1",CURRENT_TIMESTAMP(),:username)');
+	$statement->bindParam(':nodeID', $nodeID);
+	$statement->bindParam(':username', $username);
+	$statement->execute();
 ?>
