@@ -59,19 +59,20 @@ button {
 				<p>
 				<button id="dsButton" name="btnfun1" onclick="floor3()">Floor 3</button>
 				<button id="dsButton1" name="btnfun2" onclick="floor2() ">Floor 2</button>
-				<button id="dsButton2" onclick="floor1()">Floor 1</button>
+				<button id="dsButton2" name="btnfun3" onclick="floor1()">Floor 1</button>
 				<button id="dsStop" onclick="mStop()">STAHP</button>
 				</p> 
 
 		</div>
 		<h1 id='floor'></h1>
-			<textarea id="event_logging_textarea" readonly></textarea>
-			<p>Click <a href="logout.php"> here </a> to be logged out.</p>
+		<h1 id='pos'></h1>
+		<textarea id="event_logging_textarea" readonly></textarea>
+		<p>Click <a href="logout.php"> here </a> to be logged out.</p>
 	<script>
-var pos = 0;	// change to variable fetched from database table
 var bottomFloor = 350;
 var secondFloor = 175;
 var thirdFloor = 0;
+var pos = document.getElementById("pos");
 var elem = document.getElementById("animate");
 var txtarea = document.getElementById("event_logging_textarea");
 
@@ -88,6 +89,8 @@ function update_txtarea(){
 	xmlhttpShow.open("GET","../php/update_txtarea.php", true);
 	xmlhttpShow.send();
 }
+
+
 /* Disable and Enable Buttons for the purpose of getting rid of double-clicks */
 function dsButton(){
 	document.getElementById("dsButton").disabled = true;
@@ -137,7 +140,7 @@ function floor3() {
     };
     xmlhttpShow.open("GET", "../php/elevatorStop.php", true);
     xmlhttpShow.send();
-} */
+} */ 
 
 function floor2(){
 	var xmlhttpShow = new XMLHttpRequest();
