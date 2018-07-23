@@ -57,9 +57,9 @@ button {
 		<div id ="container">
 			<div id ="animate" class="absolute"></div>
 				<p>
-				<button id="dsButton" name="btnfun1" onclick="floor3()">Floor 3</button>
-				<button id="dsButton1" name="btnfun2" onclick="floor2() ">Floor 2</button>
-				<button id="dsButton2" onclick="floor1()">Floor 1</button>
+				<button id="dsButton" name="btnfun1" onclick="requestfloor3()">Floor 3</button>
+				<button id="dsButton1" name="btnfun2" onclick="requestfloor2() ">Floor 2</button>
+				<button id="dsButton2" onclick="requestfloor1()">Floor 1</button>
 				<button id="dsStop" onclick="mStop()">Emergency Stop</button>
 				</p>
 		</div>
@@ -76,6 +76,7 @@ var elem = document.getElementById("animate");
 var txtarea = document.getElementById("event_logging_textarea");
 
 window.setInterval(update_txtarea, 1000);
+window.setInterval(update_elevatorstatus, 1000);
 /* call a php script to read the sql log table and update the textarea*/
 function update_txtarea(){
 	var xmlhttpShow = new XMLHttpRequest;
@@ -86,6 +87,31 @@ function update_txtarea(){
 		}
 	}
 	xmlhttpShow.open("GET","../php/update_txtarea.php", true);
+	xmlhttpShow.send();
+}
+
+function update_elevatorstatus(){
+	var xmlhttpShow = new XMLHttpRequest;
+	xmlhttpShow.onreadystatechange = function(){
+		if(this.readyState == 4 && this.status == 200) {
+			var status = this.responseText; 
+			if(status == '1'){
+				document.getElementById("floor").innerHTML = '';
+				floor1();
+			}
+			else if(status == '2'){
+				document.getElementById("floor").innerHTML = '';
+				floor2();
+			}
+			else if(status == '3'){			
+				document.getElementById("floor").innerHTML = '';
+				floor3();
+			}
+			else
+				document.getElementById("floor").innerHTML = "Invalid Status - " + status;
+		}
+	}
+	xmlhttpShow.open("GET","../php/elevator_status.php?q=", true);
 	xmlhttpShow.send();
 }
 /* Disable and Enable Buttons for the purpose of getting rid of double-clicks */
@@ -102,16 +128,6 @@ function enButton(){
 
 
 function floor3() {
- 	var xmlhttpShow = new XMLHttpRequest();
-    xmlhttpShow.onreadystatechange = function() {
-			if(this.readyState == 4 && this.status == 200) {
-				var resp = this.responseText;   // Text string returned from server in 'echo' statement
-				document.getElementById('floor').innerHTML = resp;
-			}
-    };
-	xmlhttpShow.open("GET", "../php/elevatorFloor3.php", true);
-	xmlhttpShow.send();
-
     var id = setInterval(frame, 5);
     function frame() {
 		if (pos == thirdFloor) {
@@ -133,15 +149,6 @@ function mStop(){
 }
 
 function floor2(){
-	var xmlhttpShow = new XMLHttpRequest();
-    xmlhttpShow.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200) {
-		    var resp = this.responseText;   // Text string returned from server in 'echo' statement
-		    document.getElementById('floor').innerHTML = resp;
-		}
-	};
-    xmlhttpShow.open("GET", "../php/elevatorFloor2.php", true);
-    xmlhttpShow.send();
 	var id = setInterval(frame, 5);
 	function frame() {
 		if (pos == secondFloor) {
@@ -167,16 +174,7 @@ function floor2(){
 }
 
 function floor1() {
-	var xmlhttpShow = new XMLHttpRequest();
-    xmlhttpShow.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200) {
-		    var resp = this.responseText;   // Text string returned from server in 'echo' statement
-		    document.getElementById('floor').innerHTML = resp;
-		}
-    };
-    xmlhttpShow.open("GET", "../php/elevatorFloor1.php", true);
-    xmlhttpShow.send();
-    var id = setInterval(frame, 5);
+	var id = setInterval(frame, 5);
     function frame() {
 		if (pos == bottomFloor) {
 		  //document.getElementById("myText").innerHTML = "FIRST FLOOR"
@@ -186,10 +184,33 @@ function floor1() {
 		    pos++;
 		    elem.style.top = pos + 'px';
 		    elem.style.bottom = pos + 'px';
-		    dsButton();
+		    dsButton();		
 		}
-
     }
+}
+
+function requestfloor1(){
+	if (pos != bottomFloor) {
+		var xmlhttpShow = new XMLHttpRequest();
+		xmlhttpShow.open("GET", "../php/elevatorFloor1.php", true);
+		xmlhttpShow.send();	
+	}
+}
+
+function requestfloor2(){
+	if (pos != secondFloor) {
+		var xmlhttpShow = new XMLHttpRequest();
+		xmlhttpShow.open("GET", "../php/elevatorFloor2.php", true);
+		xmlhttpShow.send();	
+	}
+}
+
+function requestfloor3(){
+	if (pos != thirdFloor) {
+		var xmlhttpShow = new XMLHttpRequest();
+		xmlhttpShow.open("GET", "../php/elevatorFloor3.php", true);
+		xmlhttpShow.send();	
+	}
 }
 	</script>
 	</body>
