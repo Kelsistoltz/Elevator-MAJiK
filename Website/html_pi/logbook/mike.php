@@ -39,7 +39,8 @@
 				<p><input type = "file" name = "file"/> </p>
 				<p><input type = "submit" name = "upload" value = "Upload Image"></p>
 			</form>
-			<p><strong>Log Document for Project VI - Group MAJiK</strong></p>
+
+<p><strong>Log Document for Project VI - Group MAJiK</strong></p>
 <p><strong>Michael Luong</strong></p>
 <p><strong>May 7, 2018</strong></p>
 
@@ -252,6 +253,31 @@
 <ul><li>Mike Galle suggests to copy an image of the PI to VMWare</li></ul>
 <ul><li>https://www.raspberrypi.org/documentation/installation/installing-images/README.md</li></ul>
 <li><u>https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/msd.md</u> </li></ul>
+
+
+<h1>Week of July 9, 2018</h1>
+<p><strong>Monday, July 9, 2018</strong></p>
+<ul><li>Implemented elevator variables with database</li></ul>
+<li>Josh created a shared public database (user-specific)</li></ul>
+
+<p><strong>Wednesday, July 11, 2018</strong></p>
+<ul><li>Fixed a ‘bug’ where values were not being ‘inserted’ correctly</li></ul>
+<ul><li>Typo…</li></ul>
+<li>Implemented elevator buttons to move AND update tables in database</li>
+<li>IP: 142.156.193.61</li>
+<li>Database Name: test</li>
+<li>Password: MAJiK</li></ul>
+
+<h1>Week of July 16, 2018</h1>
+<p><strong>Monday, July 16, 2018</strong></p>
+<ul><li>Used Mike Galle’s code for AJAX as an example to call php files to a variable</li></ul>
+<li>Implemented each floor to correctly update Floor Status</li>
+<li>Need to correct how the values are being called and read by the backend of the site.</li>
+<ul><li>Find a way to use AJAX to automatically check for values (solved by Josh)</li></ul></ul>
+
+<p><strong>Sunday, July 22, 2018</strong></p>
+<ul><li>Added in a log message each time user logs in and logs out</li></ul>
+<ul><li>To display the logs AFTER the user’s timestamp for logging in</li></ul>
 
 
 <?php
