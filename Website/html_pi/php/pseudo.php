@@ -83,6 +83,7 @@ button {
 		    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
     </nav>
+
 	<div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
       <div class="container">
@@ -170,6 +171,7 @@ function update_txtarea(){
 	xmlhttpShow.open("GET","../php/update_txtarea.php", true);
 	xmlhttpShow.send();
 }
+
 function update_elevatorstatus(){
 	var xmlhttpShow = new XMLHttpRequest;
 	xmlhttpShow.onreadystatechange = function(){
@@ -262,6 +264,7 @@ function floor1() {
 		}
     }
 }
+
 function requestfloor1(){
 	if (pos != bottomFloor) {
 		var xmlhttpShow = new XMLHttpRequest();
@@ -269,6 +272,7 @@ function requestfloor1(){
 		xmlhttpShow.send();	
 	}
 }
+
 function requestfloor2(){
 	if (pos != secondFloor) {
 		var xmlhttpShow = new XMLHttpRequest();
@@ -276,6 +280,7 @@ function requestfloor2(){
 		xmlhttpShow.send();	
 	}
 }
+
 function requestfloor3(){
 	if (pos != thirdFloor) {
 		var xmlhttpShow = new XMLHttpRequest();

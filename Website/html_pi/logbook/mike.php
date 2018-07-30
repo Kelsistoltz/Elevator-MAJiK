@@ -5,7 +5,7 @@
 		$file_size = $_FILES['file']['size'];
 		$file_temp_Loc = $_FILES['file']['tmp_name'];
 		$file_store = "uploadM/".$file_name;
-		
+
 		if(move_uploaded_file($file_temp_Loc, $file_store)){
 			echo "Files are uploaded";
 		}
@@ -15,8 +15,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		
-		<meta name="viewport" content="width=device-idth, initial-scale=1.0" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link href="../css/homesty.css" type="text/css" rel="stylesheet" />
 
 		<title>Mike Luong's Log Book</title>
@@ -24,11 +24,11 @@
 	<body>
 		<div id="mySidenav" class="sidenav">
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-			<a href="../main_html/home.html">Home</a>
+			<a href="../main_html/index.html">Home</a>
 			<a href="../logbook/mike.php">Mike Luong's Logs</a>
 			<a href="../logbook/aaron.php">Aaron's Logs</a>
 			<a href="../logbook/josh.php">Josh's Logs</a>
-			<a href="../logbook/kelsy.php">Kelsi's Logs</a>				
+			<a href="../logbook/kelsy.php">Kelsi's Logs</a>
 			<a href="../main_html/about.html">About Us and the Project</a>
 			<a href="../main_html/plan.html">Project Plan</a>
 			<a href="../main_html/login.html">Login</a>
@@ -39,7 +39,8 @@
 				<p><input type = "file" name = "file"/> </p>
 				<p><input type = "submit" name = "upload" value = "Upload Image"></p>
 			</form>
-			<p><strong>Log Document for Project VI - Group MAJiK</strong></p>
+
+<p><strong>Log Document for Project VI - Group MAJiK</strong></p>
 <p><strong>Michael Luong</strong></p>
 <p><strong>May 7, 2018</strong></p>
 
@@ -254,6 +255,31 @@
 <li><u>https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/msd.md</u> </li></ul>
 
 
+<h1>Week of July 9, 2018</h1>
+<p><strong>Monday, July 9, 2018</strong></p>
+<ul><li>Implemented elevator variables with database</li></ul>
+<li>Josh created a shared public database (user-specific)</li></ul>
+
+<p><strong>Wednesday, July 11, 2018</strong></p>
+<ul><li>Fixed a ‘bug’ where values were not being ‘inserted’ correctly</li></ul>
+<ul><li>Typo…</li></ul>
+<li>Implemented elevator buttons to move AND update tables in database</li>
+<li>IP: 142.156.193.61</li>
+<li>Database Name: test</li>
+<li>Password: MAJiK</li></ul>
+
+<h1>Week of July 16, 2018</h1>
+<p><strong>Monday, July 16, 2018</strong></p>
+<ul><li>Used Mike Galle’s code for AJAX as an example to call php files to a variable</li></ul>
+<li>Implemented each floor to correctly update Floor Status</li>
+<li>Need to correct how the values are being called and read by the backend of the site.</li>
+<ul><li>Find a way to use AJAX to automatically check for values (solved by Josh)</li></ul></ul>
+
+<p><strong>Sunday, July 22, 2018</strong></p>
+<ul><li>Added in a log message each time user logs in and logs out</li></ul>
+<ul><li>To display the logs AFTER the user’s timestamp for logging in</li></ul>
+
+
 <?php
 
    if(isset($_POST['submit'])){#
@@ -288,7 +314,7 @@
      //$dl_pic = file_get_contents($url);
      //$dl_pic = Desktop/something.jpg;
      //echo"<img src='$dl_pic'/>";
-     
+
      if (file_put_contents($complete_save_loc, file_get_contents($url))!= 0){
      	echo"Success";
      }else{
@@ -338,8 +364,8 @@
     			document.getElementById("mySidenav").style.width = "0";
     			document.getElementById("main").style.marginLeft= "0";
 			}
-		</script>	
-			
+		</script>
+
 	</body>
 </html>
 

@@ -5,6 +5,12 @@
 	width: 100%;
 }
 
+.top{
+	position: fixed;
+	text-align: center;
+	bottom: 30px;
+}
+
 h1 {
 	width: auto;
 	color: black;
@@ -167,7 +173,6 @@ a:hover{
 }
 
 body{
-	width: 50%;
 	padding: 16px;
 }
 
@@ -179,10 +184,11 @@ body{
 a.button:link{
 	text-indent: -9999px;
 	background-image: url(../images/req.gif);
-	background-size: 150px 50px;
-	width: 150px;
-	height: 50px;
+	background-size: 75px 25px;
+	width: 75px;
+	height: 25px;
 	display: inline-block;
+	float:left;
 }
 a.button:active{
 	background-image: url(../images/req1.png);

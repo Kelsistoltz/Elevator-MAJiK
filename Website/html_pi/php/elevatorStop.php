@@ -11,7 +11,7 @@
 
 	$db = new PDO('mysql:host=142.156.193.61;dbname=test', $username, 'MAJiK');
 
-	$statement = $db->prepare('INSERT INTO `data` VALUES(0,"Website Emergency Stop",:nodeID,:username,CURRENT_TIMESTAMP())');
+	$statement = $db->prepare('INSERT INTO `data` VALUES(10,"Website Emergency Stop",:nodeID,:username,CURRENT_TIMESTAMP())');
   $statement->bindParam(':username', $username);
 	$statement->bindParam(':nodeID', $nodeID);
   $statement->execute();
