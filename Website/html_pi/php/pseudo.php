@@ -70,15 +70,15 @@ button {
         <div class="nav-wrapper container">
 		    <a id="logo-container" href="#" class="brand-logo" ><img class="mylogo" src="../images/themajiklogo.png"></a>
 		    <ul class="right hide-on-med-and-down">
-			    <li><a href="#">Home</a></li>
+			    <li><a href="../main_html/login.html">Home</a></li>
 				<li><a href="#">Logbooks</a></li>
 				<li><a href="logout.php">Log Out</a></li>
 		    </ul>
 
 		    <ul id="nav-mobile" class="sidenav">
-				<li><a href="#">Home</a></li>
+				<li><a href="../main_html/login.html">Home</a></li>
 				<li><a href="#">Logbooks</a></li>
-				<li><a href="#">Log Out</a></li>
+				<li><a href="logout.php">Log Out</a></li>
 		    </ul>
 		    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
