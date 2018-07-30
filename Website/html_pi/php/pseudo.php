@@ -20,6 +20,7 @@ $db = new PDO('mysql:host=142.156.193.61;dbname=test', $username, 'MAJiK');
 <html>
 <style>
 #container {
+	display: inline-block;
   width: 250px;
   height: 400px;
   position: relative;
@@ -42,6 +43,7 @@ div.absolute {
   background:url(../images/elevator.jpg);
   background-size: 50%;
   margin-left: 35%	/* to push the animation box over 35% of the container */
+  
 
 }
 button {
