@@ -52,22 +52,51 @@ button {
 
 </style>
 <!DOCTYPE html>
-<html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Parallax Template - Materialize</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
 	<body>
+	<nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+		    <a id="logo-container" href="#" class="brand-logo" ><img class="mylogo" src="../images/themajiklogo.png"></a>
+		    <ul class="right hide-on-med-and-down">
+			    <li><a href="#">Home</a></li>
+				<li><a href="#">Logbooks</a></li>
+				<li><a href="logout.php">Log Out</a></li>
+		    </ul>
+
+		    <ul id="nav-mobile" class="sidenav">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Logbooks</a></li>
+				<li><a href="#">Log Out</a></li>
+		    </ul>
+		    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+	<div class="col s12 center">
 		<div id ="container">
 			<div id ="animate" class="absolute"></div>
+			<div class="row center">
 				<p>
 				<button id="dsButton" name="btnfun1" onclick="requestfloor3()">Floor 3</button>
 				<button id="dsButton1" name="btnfun2" onclick="requestfloor2() ">Floor 2</button>
 				<button id="dsButton2" onclick="requestfloor1()">Floor 1</button>
 				<button id="dsStop" onclick="mStop()">Emergency Stop</button>
 				</p>
+			</div>
 		</div>
 		<h1 id='floor'></h1>
 		<p><b>Logs:</b></p>
 		<textarea id="event_logging_textarea" readonly></textarea>
-		<p>Click <a href="logout.php"> here </a> to be logged out.</p>
+	</div>
 	<script>
 var pos = 0;	// change to variable fetched from database table
 var bottomFloor = 350;
@@ -214,5 +243,9 @@ function requestfloor3(){
 	}
 }
 	</script>
+	<!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../js/materialize.js"></script>
+    <script src="../js/init.js"></script>
 	</body>
 </html>
