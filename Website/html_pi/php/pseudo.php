@@ -159,7 +159,7 @@ button {
     </div>
     <div class="footer-copyright">
 		<div class="container">
-		Made by <a class="brown-text text-lighten-3">Michael Luong, Aaron Kruck, Joshua Yonathan, Kelsi Stoltz</a>
+		&copy MAJiK <a class="brown-text text-lighten-3">Michael Luong, Aaron Kruck, Joshua Yonathan, Kelsi Stoltz</a>
 		Template by <a class="brown-text text-lighten-3">Materialize</a>
 		</div>
     </div>
