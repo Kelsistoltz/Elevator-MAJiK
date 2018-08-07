@@ -6,7 +6,6 @@ if (empty($_SESSION)){
 }
 $username = $_SESSION['username'];
 $db = new PDO('mysql:host=142.156.193.61;dbname=test', $username, 'MAJiK');
-
 	//$rows = $db->query('SELECT DateandTime FROM data ORDER BY DateandTime ASC');
 	//echo $rows;
 /* 	foreach ($rows as $row){
@@ -28,7 +27,6 @@ $db = new PDO('mysql:host=142.156.193.61;dbname=test', $username, 'MAJiK');
 	background-size: 100%;
 }
 #animate{
-
 }
 #event_logging_textarea{
 	width: 600px;
@@ -49,7 +47,6 @@ button {
 	display: block;
     margin: left;
 }
-
 </style>
 <!DOCTYPE html>
 <html lang="en">
