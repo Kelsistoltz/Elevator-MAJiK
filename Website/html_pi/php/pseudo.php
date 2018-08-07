@@ -6,7 +6,6 @@ if (empty($_SESSION)){
 }
 $username = $_SESSION['username'];
 $db = new PDO('mysql:host=142.156.193.61;dbname=test', $username, 'MAJiK');
-
 	//$rows = $db->query('SELECT DateandTime FROM data ORDER BY DateandTime ASC');
 	//echo $rows;
 /* 	foreach ($rows as $row){
@@ -21,14 +20,13 @@ $db = new PDO('mysql:host=142.156.193.61;dbname=test', $username, 'MAJiK');
 <style>
 #container {
 	display: inline-block;
-  width: 250px;
-  height: 400px;
-  position: relative;
-  background: url(../images/elevatorBack.png);
-  background-size: 100%;
+	width: 250px;
+	height: 400px;
+	position: relative;
+	background: url(../images/elevatorBack.png);
+	background-size: 100%;
 }
 #animate{
-
 }
 #event_logging_textarea{
 	width: 600px;
@@ -43,15 +41,12 @@ div.absolute {
   background:url(../images/elevator.jpg);
   background-size: 50%;
   margin-left: 35%	/* to push the animation box over 35% of the container */
-  
-
 }
 button {
 	padding: 10px;
-    display:block;
+	display: block;
     margin: left;
 }
-
 </style>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,86 +65,105 @@ button {
         <div class="nav-wrapper container">
 		    <a id="logo-container" href="#" class="brand-logo" ><img class="mylogo" src="../images/themajiklogo.png"></a>
 		    <ul class="right hide-on-med-and-down">
-			    <li><a href="#">Home</a></li>
-				<li><a href="#">Logbooks</a></li>
-				<li><a href="logout.php">Log Out</a></li>
+			    <li><a href="../main_html/login.html">Home</a></li>
+				<li><a href="#">About Us and the Project</a></li>
+				<li><a href="#">Project Plan</a></li>
+				<li><a href="logout.php">Sign Out</a></li>
 		    </ul>
 
 		    <ul id="nav-mobile" class="sidenav">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Logbooks</a></li>
-				<li><a href="#">Log Out</a></li>
+				<li><a href="../main_html/login.html">Home</a></li>
+				<li><a href="../logbook/mike.php">Mike Luong's Logs</a></li>
+				<li><a href="../logbook/aaron.php">Aaron's Logs</a></li>
+				<li><a href="../logbook/josh.php">Josh's Logs</a></li>
+				<li><a href="../logbook/kelsy.php">Kelsi's Logs</a></li>
+				<li><a href="#">About Us and the Project</a></li>
+				<li><a href="#">Project Plan</a></li>
+				<li><a href="logout.php">Sign Out</a></li>
 		    </ul>
 		    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
     </nav>
+
 	<div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-		<div class="col s12 center">
-			<div id ="container">
-				<div id ="animate" class="absolute"></div>
+		<div class="section no-pad-bot">
+			<div class="container">
 				<div class="row center">
-					<p>
-					<button id="dsButton" name="btnfun1" onclick="requestfloor3()">Floor 3</button>
-					<button id="dsButton1" name="btnfun2" onclick="requestfloor2() ">Floor 2</button>
-					<button id="dsButton2" onclick="requestfloor1()">Floor 1</button>
-					<button id="dsStop" onclick="mStop()">Emergency Stop</button>
-					</p>
+					<div class="col s12 center">
+						<br><br>
+						<div class="col s12 m4">
+						  <div class="icon-block">
+							<div class="section">
+								<p>.</p>
+							</div>
+						  </div>
+						</div>
+						<div class="col s12 m4">
+							<div id ="container">
+								<div id ="animate" class="absolute"></div>
+								<div class="row center">
+
+								</div>
+							</div>
+						</div>
+						<div class="col s12 m4">
+							<div class="icon-block">
+								<p>
+								<button class="btn btn-small btn-block" id="dsButton" name="btnfun1" onclick="requestfloor3()">Floor 3</button>
+								<button class="btn btn-small btn-block" id="dsButton1" name="btnfun2" onclick="requestfloor2() ">Floor 2</button>
+								<button class="btn btn-small btn-block" id="dsButton2" onclick="requestfloor1()">Floor 1</button>
+								<button class="btn btn-small btn-block" id="dsStop" onclick="mStop()">Emergency Stop</button>
+								</p>		
+							</div>
+						</div>
+						<br><br>
+					</div>
 				</div>
 			</div>
 		</div>
-        <br><br>
-      </div>
+		<div class="parallax"><img src="../images/1511.jpg" alt="Unsplashed background img 1"></div>
     </div>
-    <div class="parallax"><img src="../images/1511.jpg" alt="Unsplashed background img 1"></div>
-  </div>
   
 	<div class="col s12 center">
 		<h1 id='floor'></h1>
 		<p><b>Logs:</b></p>
 		<textarea id="event_logging_textarea" readonly></textarea>
 	</div>
+	<footer class="page-footer teal">
+    <div class="container">
+		<div class="row">
+			<div class="col l6 s12">
+			    <h5 class="white-text">MAJiK</h5>
+			    <p class="grey-text text-lighten-4">Group of Majicians banded together one fateful day to create the best elevator system that has most? things working according to the project charter and looks the greatest (wasn't created in paint). The elevator moves up, but then it moves down. Preposterous! What sorcery is this? That's right, MajiK. </p>
+
+
+			</div>
+			<div class="col l3 s12">
+			    <h5 class="white-text">Log Books</h5>
+			    <ul>
+					<li><a class="white-text" href="../logbook/mike.php">Michael Luong</a></li>
+					<li><a class="white-text" href="../logbook/aaron.php">Aaron Kruck</a></li>
+					<li><a class="white-text" href="../logbook/josh.php">Joshua Yonathan</a></li>
+					<li><a class="white-text" href="../logbook/kelsy.php">Kelsi Stoltz</a></li>
+			    </ul>
+			</div>
+			
+			<div class="col l3 s12">
+			    <h5 class="white-text">Location</h5>
+			    <iframe width="350" height="200" src="https://www.google.com/maps?q=Conestoga+College,+850+Fountain+St+S,+Cambridge,+ON+N3H+0A8/&output=embed"></iframe>
+			</div>
+		</div>
+    </div>
+    <div class="footer-copyright">
+		<div class="container">
+		&copy MAJiK <a class="brown-text text-lighten-3">Michael Luong, Aaron Kruck, Joshua Yonathan, Kelsi Stoltz</a>
+		Template by <a class="brown-text text-lighten-3">Materialize</a>
+		</div>
+    </div>
+    </footer>
 	
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">Wow, so cool.</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="../images/aditya-chinchure-314182-unsplash.jpg" alt="Unsplashed background img 2"></div>
-  </div>
-
-  <div class="container">
-    <div class="section">
-
-      <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Contact Us</h4>
-          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">______________</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="../images/aditya-chinchure-314182-unsplash.jpg" alt="Unsplashed background img 3"></div>
-  </div>
 	<script>
+	
 var pos = 0;	// change to variable fetched from database table
 var bottomFloor = 350;
 var secondFloor = 175;
