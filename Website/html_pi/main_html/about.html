@@ -1,117 +1,128 @@
 <!DOCTYPE html>
 <html>
 	<head>
-
-
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Project VI - About</title>
-		<link href="../css/homesty.css" type="text/css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="../css/mystyle.css"/>
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-		<!-- jQuery library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-		<!-- Latest compiled JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+		<meta name="description" content="About Page" />
+		<meta name="robots" content="noindex nofollow" />
+		<meta html-equiv="author" content="MAJiK" />
+		<meta html-equiv="pragma" content="no-cache" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<!-- CSS  -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 	</head>
 	<body>
-		<div id="mySidenav" class="sidenav">
-			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-			<a href="index.html">Home</a>
-			<a href="../logbook/mike.php">Mike Luong's Logs</a>
-			<a href="../logbook/aaron.php">Aaron's Logs</a>
-			<a href="../logbook/josh.php">Josh's Logs</a>
-			<a href="../logbook/kelsy.php">Kelsi's Logs</a>
-			<a href="about.html">About Us and the Project</a>
-			<a href="plan.html">Project Plan</a>
-			<a href="login.html">Login</a>
-		</div>
+	<nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+		    <a id="logo-container" href="../main_html/index.html" class="brand-logo" ><img class="mylogo" src="../images/themajiklogo.png"></a>
+		    <ul class="right hide-on-med-and-down">
+			    <li><a href="../main_html/index.html">Home</a></li>
+				<li><a href="../main_html/about.html">About Us and the Project</a></li>
+				<li><a href="../main_html/plan.html">Project Plan</a></li>
+				<li><a href="../main_html/login.html">Login</a></li>
+		    </ul>
 
-
-		<div class="container-fluid">
-			<h1><span class="open" style="cursor:pointer" onclick="openNav()">&#9778;</span> About Project VI</h1>
-			<h2 align="center">Meet the Team</h2>
-			<div class="container-fluid">
-
-
-				<div class="row">
-					<div class="col-xs-6 col-md-4 col-lg-3 card">
-						<h3>Aaron Kruck</h3>
-						<figure>
-							<img src="../images/aaron.jpg" alt="Aaron Kruck" title="Aaron" width="150" height="150"/>
-							<figcaption>My name is Aaron Kruck. I like Swimming, Playing Games, and I can solve the Rubix Cube</figcaption>
-						</figure>
-						<p id ='infoA'>Aaron's age doesn't exist.</p>
-					</div>
-
-					<div class="col-xs-6 col-md-4 col-lg-3 card">
-						<h3>Josh Yonathan</h3>
-						<figure>
-							<img src="../images/josh.jpg"align"right" alt="Joshua Yonathan" title="Josh" width="150" height="150"/>
-							<figcaption>Also known as Joshus, I like Building PCs, Greek naming styles, and plaid shirts.</figcaption>
-						</figure>
-						<p id ='infoJ'>Josh's age doesn't exist.</p>
-					</div>
-
-					
-
-			<div class="row">
-				<div class="col-xs-6 col-md-4 col-lg-3 card">
-					<h3>Kelsi Stoltz</h3>
-					<figure>
-						<img src="../images/aaron.jpg"align"right" alt="MAJiK Logo" title="Logo" width="150" height="150"/>
-						<figcaption>I am Kelsi Stoltz. Currently I am taking Electronic Systems Engineering at Conestoga College. I like Star Wars, pizza and playing hockey.</figcaption>
-					</figure>
-					<p id ='infoK'>Kelsi's age doesn't exist.</p>
-				</div>
-				<div class="col-xs-6 col-md-4 col-lg-3 card">
-					<h3>Mike Luong</h3>
-					<figure>
-						<img src="../images/mike.jpg"align"right" alt="MAJiK Logo" title="Logo" width="150" height="150"/>
-						<figcaption>My name is Michael Luong and I enjoy watching shows and gaming. Currently finishing my third year of my Bachelor's degree with the rest of my group, here to create the best CAN Control/Diagnostic site there is.</figcaption>
-					</figure>
-					<p id ='infoM'>Mike's age doesn't exist.</p>
-
+		    <ul id="nav-mobile" class="sidenav">
+				<li><a href="../main_html/index.html">Home</a></li>
+				<li><a href="../logbook/mike.php">Mike Luong's Logs</a></li>
+				<li><a href="../logbook/aaron.php">Aaron's Logs</a></li>
+				<li><a href="../logbook/josh.php">Josh's Logs</a></li>
+				<li><a href="../logbook/kelsy.php">Kelsi's Logs</a></li>
+				<li><a href="../main_html/about.html">About Us and the Project</a></li>
+				<li><a href="../main_html/plan.html">Project Plan</a></li>
+				<li><a href="../main_html/login.html">Login</a></li>
+		    </ul>
+		    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+	<div id="index-banner" class="parallax-container">
+		<div class="section no-pad-bot">
+			<div class="container">
+				<div class="row center">
+					<h2 class="header center black-text light">About the Project</h2>
+					 <h5 class="header black-text col s12 light">The overall project plan is to build and control an elevator, leveraging the use of a CAN bus communications environment, coupled with networked systems to create a means of tracking the elevator’s operational/diagnostics data. The elevator car’s position and status mustalso be viewable to computers over the Internet. </h5>
 				</div>
 			</div>
-			<br />
-			<h4>Links: </h4>
-			<ul>
-				<li><a  href="projectdetails.html">Project Details</a></li>
-				<li><a href="../documents/charter.pdf">Project Charter</a></li>
-			</ul>
-
-			<br />
-			<h4>Educational Video</h4>
-
-			<br><iframe width="560" height="315" src="https://www.youtube.com/embed/zRpsRKuyi3Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			<h3>Location</h3>
-			<iframe width="560" height="315" src="https://www.google.com/maps?q=Conestoga+College,+850+Fountain+St+S,+Cambridge,+ON+N3H+0A8/&output=embed"></iframe>
-			<br><button onclick="topFunction()" class="gtt" title="GoToTop" color="red"><strong>Top of Page</strong></button>
-			<div class="footer">&copy MAJiK</div>
 		</div>
+		<div class="parallax"><img src="../images/1511.jpg" alt="Unsplashed background img 1"></div>
+    </div>
+	<div class="container">
+		<h2 align="center">Meet the Team</h2>
+		<div class="container">
+			<div class="row">
+				<div class="col s12 m4">
+					<h4>Aaron Kruck</h4>
+						<img src="../images/aaron.jpg" alt="Aaron Kruck" title="Aaron" width="150" height="150"/>
+						<figcaption>My name is Aaron Kruck. I like Swimming, Playing Games, and I can solve the Rubix Cube</figcaption>
+					<p id ='infoA'>Aaron's age doesn't exist.</p>
+				</div>
 
-		<script src="../js/birth.js"></script>
+				<div class="col s12 m4">
+					<h4>Josh Yonathan</h4>
+						<img src="../images/josh.jpg"align"right" alt="Joshua Yonathan" title="Josh" width="150" height="150"/>
+						<figcaption>Also known as Joshus, I like Building PCs, Greek naming styles, and plaid shirts.</figcaption>
+				
+					<p id ='infoJ'>Josh's age doesn't exist.</p>
+				</div>
+				<div class="col s12 m4">
+					<h4>Kelsi Stoltz</h4>
+						<img src="../images/kelsi.jpg"align"right" alt="MAJiK Logo" title="Logo" width="150" height="150"/>
+						<figcaption>I am Kelsi Stoltz. Currently I am taking Electronic Systems Engineering at Conestoga College. I like Star Wars, pizza and playing hockey.</figcaption>
+					<p id ='infoK'>Kelsi's age doesn't exist.</p>
+				</div>
+				<div class="col s12 m4">
+					<h4>Mike Luong</h4>
+						<img src="../images/mike.jpg"align"right" alt="MAJiK Logo" title="Logo" width="150" height="150"/>
+						<figcaption>My name is Michael Luong and I enjoy watching shows and gaming. Currently finishing my third year of my Bachelor's degree with the rest of my group, here to create the best CAN Control/Diagnostic site there is.</figcaption>
 
-		<script>
-			function topFunction(){
-				document.body.scrollTop = 0;
-				document.documentElement.scrollTop = 0;
-			}
-			<!-- Functions for side menu -->
-			function openNav() {
-   				document.getElementById("mySidenav").style.width = "250px";
-    			document.getElementById("main").style.marginLeft = "250px";
-			}
+					<p id ='infoM'>Mike's age doesn't exist.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<button onclick="topFunction()" class="gtt" title="GoToTop" color="red"><strong>Top of Page</strong></button>
+	<footer class="page-footer teal">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+				<h5 class="white-text">Links: </h5>
+				<ul>
+					<li><a class="white-text" href="projectdetails.html">Project Details</a></li>
+					<li><a class="white-text" href="../documents/charter.pdf">Project Charter</a></li>
+				</ul>
+				</div>
+				<div class="col l3 s12">
+				<h5 class="white-text">Educational Video</h5>
+				<iframe width="300" height="150" src="https://www.youtube.com/embed/zRpsRKuyi3Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</div>
+				<div class="col l3 s12">
+				<h5 class="white-text">Location</h5>
+				<iframe width="300" height="150" src="https://www.google.com/maps?q=Conestoga+College,+850+Fountain+St+S,+Cambridge,+ON+N3H+0A8/&output=embed"></iframe>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+		
+			<div class="container">
+			&copy MAJiK <a class="brown-text text-lighten-3">Michael Luong, Aaron Kruck, Joshua Yonathan, Kelsi Stoltz</a>
+			Template by <a class="brown-text text-lighten-3">Materialize</a>
+			</div>
+		</div>
+	</footer>
 
-			function closeNav() {
-    			document.getElementById("mySidenav").style.width = "0";
-    			document.getElementById("main").style.marginLeft= "0";
-			}
-		</script>
+	<script src="../js/birth.js"></script>
+	<script>
+		function topFunction(){
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+	</script>
 
+	<!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../js/materialize.js"></script>
+    <script src="../js/init.js"></script>
 	</body>
 </html>

@@ -1,32 +1,125 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="description" content="login Page" />
+		<title>Project VI - Request Access</title>
+		<meta name="description" content="Request Access Page" />
 		<meta name="robots" content="noindex nofollow" />
 		<meta html-equiv="author" content="MAJiK" />
 		<meta html-equiv="pragma" content="no-cache" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link href="../css/homesty.css" type="text/css" rel="stylesheet" />
-
-		<title>Request Access - No BOTS</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<!-- CSS  -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 	</head>
 	<body>
-		<div id="mySidenav" class="sidenav">
-			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-			<a href="index.html">Home</a>
-			<a href="../logbook/mike.php">Mike Luong's Logs</a>
-			<a href="../logbook/aaron.php">Aaron's Logs</a>
-			<a href="../logbook/josh.php">Josh's Logs</a>
-			<a href="../logbook/kelsy.php">Kelsi's Logs</a>
-			<a href="about.html">About Us and the Project</a>
-			<a href="plan.html">Project Plan</a>
-			<a href="login.html">Login</a>
-		</div>
+	<nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+		    <a id="logo-container" href="../main_html/index.html" class="brand-logo" ><img class="mylogo" src="../images/themajiklogo.png"></a>
+		    <ul class="right hide-on-med-and-down">
+			    <li><a href="../main_html/index.html">Home</a></li>
+				<li><a href="../main_html/about.html">About Us and the Project</a></li>
+				<li><a href="../main_html/plan.html">Project Plan</a></li>
+				<li><a href="../main_html/login.html">Login</a></li>
+		    </ul>
 
-		<form  id="reqAccess" action="../php/request.php" class="login" method="post" target="_self">
+		    <ul id="nav-mobile" class="sidenav">
+				<li><a href="../main_html/index.html">Home</a></li>
+				<li><a href="../logbook/mike.php">Mike Luong's Logs</a></li>
+				<li><a href="../logbook/aaron.php">Aaron's Logs</a></li>
+				<li><a href="../logbook/josh.php">Josh's Logs</a></li>
+				<li><a href="../logbook/kelsy.php">Kelsi's Logs</a></li>
+				<li><a href="../main_html/about.html">About Us and the Project</a></li>
+				<li><a href="../main_html/plan.html">Project Plan</a></li>
+				<li><a href="../main_html/login.html">Login</a></li>
+		    </ul>
+		    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+	<div class="row">
+    <form class="col s6"  id="reqAccess" action="../php/request.php" class="login" method="post" target="_self">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="fname" class="text_ip" type="text" name="fname" type="text" class="validate">
+          <label for="first_name">First Name</label>
+		  <span id="firstNameFeedback"></span>
+        </div>
+        <div class="input-field col s6">
+          <input id="lname" class="text_ip" type="text" name="lname" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+	  <div class="row">
+        <div class="input-field col s6">
+          <input type="email" name="email" class="text_ip" id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input type="date" name="birthday" class="text_ip">
+          <label for="disabled">Date of Birth</label>
+        </div>
+      </div>
+	  <div class="row">
+        <div class="input-field col s6">
+          <input id="username" type="text" name="uname" class="text_ip">
+          <label for="username" class="text_lbl"><b>Username</b></label
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="pass" type="password" name="password" class="text_ip" type="password" class="validate">
+          <label for="pass" class="text_lbl"><b>Password</b></label>
+        </div>
+      </div>
+	  <div class="row">
+	  <div class="input-field col">
+		  <select name="colour" class="browser-default">
+			<option value="" disabled selected>Favourite Colour:</option>
+			<option value="red">Red</option>
+			<option value="orange">Orange</option>
+			<option value="yellow">Yellow</option>
+			<option value="green">Green</option>
+			<option value="blue">Blue</option>
+			<option value="Indigo">Indigo</option>
+			<option value="violet">Violet</option>
+		  </select>
+		</div>
+	  </div>
+	  
+      <div class="row">
+		  <div class="input-field col s6">
+		  <label name="gender">Gender:</label></br>
+		  <p>
+			<label>
+			<input  type="radio" name="group1" checked />
+			<span>Male</span>
+			</label>
+			</p><p>
+			<label>
+			<input  type="radio" name="group1"/>
+			<span>Female</span>
+			</label>
+			</p>
+		  </div>
+      </div>
+	  <div class="row">
+        <div class="input-field col s12">
+          <label for="pass" class="text_lbl"><b>Additional Info:</b></label></br>
+			<textarea id="textarea" rows="6" cols="30" placeholder="Tell Us A Bit About Yourself..."></textarea>
+			<span id="textarea_alert"></span>
+        </div>
+      </div>
+	  <input id="submit" class="form_but" type="submit" value="Request Access" onlcick="alert('Access Requested')" /><br>
+    </form>
+  </div>
+
+		<!-- <form  id="reqAccess" action="../php/request.php" class="login" method="post" target="_self">
 			<div class="ogForm">
 			<br>
-				<h1><span class="open" style="cursor:pointer" onclick="openNav()">&#9778;</span> Request Access</h1>
+				<h1>Request Access</h1>
 
 				<div>
 					<label for="fname" class="text_lbl" ><b>First Name:</b></label>
@@ -97,9 +190,43 @@
 
 			</div>
 
-		</form>
+		</form> -->
 
-		<div class="footer">&copy MAJiK</div>
+		<footer class="page-footer white">
+        <div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="black-text">MAJiK</h5>
+					<p class="black-text text-lighten-4">To your left, you are given the ability to sign up to request access to the Member's Only Page. Fill out each field and click the Request Access Button down below. </p>
+
+				</div>
+				<div class="col l3 s12">
+					<h5 class="black-text">Log Books</h5>
+					<ul>
+						<li><a class="black-text" href="../logbook/mike.php">Michael Luong</a></li>
+						<li><a class="black-text" href="../logbook/aaron.php">Aaron Kruck</a></li>
+						<li><a class="black-text" href="../logbook/josh.php">Joshua Yonathan</a></li>
+						<li><a class="black-text" href="../logbook/kelsy.php">Kelsi Stoltz</a></li>
+					</ul>
+				</div>
+				
+				<div class="col l3 s12">
+					<h5 class="black-text">Location</h5>
+					<iframe width="300" height="150" src="https://www.google.com/maps?q=Conestoga+College,+850+Fountain+St+S,+Cambridge,+ON+N3H+0A8/&output=embed"></iframe>
+				</div>
+			</div>
+		</div>
+	<div class="footer-copyright">
+			<div class="container black-text">
+			&copy MAJiK <a class="brown-text text-lighten-3">Michael Luong, Aaron Kruck, Joshua Yonathan, Kelsi Stoltz</a>
+			Template by <a class="brown-text text-lighten-3">Materialize</a>
+			</div>
+		</div>
+	</footer>
+		<!--  Scripts-->
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="../js/materialize.js"></script>
+		<script src="../js/init.js"></script>
 		<script src="../js/formEvent.js"></script>
 		<script src="../js/project.js"></script>
 

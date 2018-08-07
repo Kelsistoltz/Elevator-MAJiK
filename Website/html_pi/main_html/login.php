@@ -24,7 +24,7 @@
 	<body>
 		<div id="mySidenav" class="sidenav">
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-			<a href="home.html">Home</a>
+			<a href="index.html">Home</a>
 			<a href="../logbook/mike.php">Mike Luong's Logs</a>
 			<a href="../logbook/aaron.php">Aaron's Logs</a>
 			<a href="../logbook/josh.php">Josh's Logs</a>

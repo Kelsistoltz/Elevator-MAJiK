@@ -53,7 +53,7 @@ button {
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>MAJiK - Project VI</title>
+    <title>MAJiK - Members Page</title>
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -63,22 +63,22 @@ button {
 	<body>
 	<nav class="white" role="navigation">
         <div class="nav-wrapper container">
-		    <a id="logo-container" href="#" class="brand-logo" ><img class="mylogo" src="../images/themajiklogo.png"></a>
+		    <a id="logo-container" href="../main_html/index.html" class="brand-logo" ><img class="mylogo" src="../images/themajiklogo.png"></a>
 		    <ul class="right hide-on-med-and-down">
-			    <li><a href="../main_html/login.html">Home</a></li>
-				<li><a href="#">About Us and the Project</a></li>
-				<li><a href="#">Project Plan</a></li>
+			    <li><a href="../main_html/index.html">Home</a></li>
+				<li><a href="../main_html/about.html">About Us and the Project</a></li>
+				<li><a href="../main_html/plan.html">Project Plan</a></li>
 				<li><a href="logout.php">Sign Out</a></li>
 		    </ul>
 
 		    <ul id="nav-mobile" class="sidenav">
-				<li><a href="../main_html/login.html">Home</a></li>
+				<li><a href="../main_html/index.html">Home</a></li>
 				<li><a href="../logbook/mike.php">Mike Luong's Logs</a></li>
 				<li><a href="../logbook/aaron.php">Aaron's Logs</a></li>
 				<li><a href="../logbook/josh.php">Josh's Logs</a></li>
 				<li><a href="../logbook/kelsy.php">Kelsi's Logs</a></li>
-				<li><a href="#">About Us and the Project</a></li>
-				<li><a href="#">Project Plan</a></li>
+				<li><a href="../main_html/about.html">About Us and the Project</a></li>
+				<li><a href="../main_html/plan.html">Project Plan</a></li>
 				<li><a href="logout.php">Sign Out</a></li>
 		    </ul>
 		    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -150,7 +150,7 @@ button {
 			
 			<div class="col l3 s12">
 			    <h5 class="white-text">Location</h5>
-			    <iframe width="350" height="200" src="https://www.google.com/maps?q=Conestoga+College,+850+Fountain+St+S,+Cambridge,+ON+N3H+0A8/&output=embed"></iframe>
+			    <iframe width="300" height="150" src="https://www.google.com/maps?q=Conestoga+College,+850+Fountain+St+S,+Cambridge,+ON+N3H+0A8/&output=embed"></iframe>
 			</div>
 		</div>
     </div>

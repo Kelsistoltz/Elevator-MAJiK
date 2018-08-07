@@ -48,7 +48,7 @@ require_once __DIR__ . '/AuthUser.php';
 	$newUser->addUser($username, $password, $email);	// add the new user to database, called from AuthUser.php
 
 	echo "<p>You have successfully registered</p>";
-	echo "<p>Click <a href=../main_html/login.php> here </a> to go back to login page.</p>";
+	echo "<p>Click <a href=../main_html/login.html> here </a> to go back to login page.</p>";
 ?>	
 
 
