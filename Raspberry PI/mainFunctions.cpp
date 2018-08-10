@@ -1,35 +1,11 @@
 #include "../include/pcanFunctions.h"
+#include "../include/databaseFunctions.h"
 #include "../include/mainFunctions.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdlib.h>
 #include <unistd.h> 
-
-
-int menu(){
-	
-	int usrchoice = 0;
-	system("@cls||clear");
-	while(1) {
-		printf("\n\nMenu - Transmit/Receive CAN Messages\n");
-		printf("1. Transmit CAN message using this program\n");
-		printf("2. Receive CAN message(s) using this program\n");
-		printf("3. Control elevator from website\n");
-		printf("4. Exit program\n");
-		printf("\nYour choice: ");
-		scanf("%d", &usrchoice);
-
-		if (usrchoice >=1 && usrchoice <= 4) {	
-			return usrchoice;
-		} else {
-			printf("\nPLEASE SELECT FROM CHOICES 1-4 ONLY!\n\n");
-			sleep(3);
-			system("@cls||clear");
-		}
-	}
-	
-}
 
 
 int chooseID(){

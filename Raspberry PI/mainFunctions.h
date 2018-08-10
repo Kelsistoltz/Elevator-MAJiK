@@ -1,7 +1,7 @@
 #ifndef MAIN_FUNCTIONS
 #define MAIN_FUNCTIONS
 
-int menu();
+//int menu();
 int chooseID();
 int chooseMsg();
 int HexFromFloor(int floorVal);

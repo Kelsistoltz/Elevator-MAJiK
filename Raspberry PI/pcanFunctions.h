@@ -19,18 +19,23 @@
 #define GO_TO_FLOOR2 0x06	// Go to floor 2
 #define GO_TO_FLOOR3 0x07	// Go to floor 3
 #define FLOOR_REQ    0x01
+#define STOPIT       0x00
 
 #define STOP		 0xFF
 
 #define QUEUE_ELEMENTS 10000
+#define W            0
 
-
+#define STR 100
 
 
 // Function declarations
 int pcanTx(int id, int data);
 //int pcanRx(int num_msgs);
 void pcanRx();
+int checkCAN();
+int checkFloor();
+
 
 
 
